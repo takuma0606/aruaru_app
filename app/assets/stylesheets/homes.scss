@@ -11,7 +11,7 @@ main {
 .catch-phrase-area {
   padding-top: 150px;
   background-color: yellow;
-  height: 500px;
+  height: 600px;
 }
 
 .catch-phrase {
@@ -74,7 +74,71 @@ a.btn-border-shadow:hover:before {
   left: 0;
 }
 
-#svg-bg {
+#svg-bg,
+#svg-bg-footer {
   width: 100%;
+  height: 120px;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//アプリの使い方説明部分
+//------------------------------------------------------------------------------------------------------------
+
+.manual-area1,
+.manual-area2 {
+  width: 100%;
+  height: 1000px;
+}
+
+.manual-title1,
+.manual-title2 {
+  font-family: "Kosugi Maru", sans-serif;
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 50px;
+}
+
+.manual-content {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
   height: 300px;
+  border-bottom: 3px solid #000;
+}
+
+.text-box {
+  width: 45%;
+  padding: 100px 0;
+  text-align: left;
+}
+
+.text-box p {
+  font-family: "Kosugi Maru", sans-serif;
+  font-size: large;
+}
+
+.image-box {
+  width: 45%;
+}
+
+.image-box img {
+  width: 100%;
+}
+
+#svg-bg-footer {
+  background-color: rgb(105, 105, 105);
+}
+
+//------------------------------------------------------------------------------------------------------------
+//フッター
+//------------------------------------------------------------------------------------------------------------
+footer {
+  background-color: rgb(105, 105, 105);
+  width: 100%;
+  height: 400px;
 }
