@@ -9,16 +9,27 @@ main {
 }
 
 .catch-phrase-area {
-  padding-top: 150px;
+  padding-top: 110px;
   background-color: yellow;
-  height: 500px;
+  height: 600px;
 }
 
 .catch-phrase {
   font-family: "Kosugi Maru", sans-serif;
   color: #000;
   font-size: 100px;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
+}
+
+.app-description {
+  font-family: "Kosugi Maru", sans-serif;
+  font-size: 20px;
+  margin-bottom: 50px;
+  line-height: 30px;
+}
+
+br.iphone {
+  display: none;
 }
 
 a.btn {
@@ -74,7 +85,193 @@ a.btn-border-shadow:hover:before {
   left: 0;
 }
 
-#svg-bg {
+#svg-bg,
+#svg-bg-iphone {
   width: 100%;
-  height: 300px;
+  height: 120px;
+}
+
+#svg-bg-iphone {
+  display: none;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//アプリの使い方説明部分
+//------------------------------------------------------------------------------------------------------------
+
+.manual-area1,
+.manual-area2 {
+  width: 80%;
+  margin: 50px auto;
+  background-color: rgb(255, 236, 151);
+  border-radius: 40px;
+  padding: 30px 0;
+}
+
+.manual-title1,
+.manual-title2 {
+  font-family: "Kosugi Maru", sans-serif;
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 50px;
+}
+
+.manual-content {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.content {
+  margin: 50px 0;
+  position: relative;
+}
+
+.content img {
+  width: 100%;
+}
+
+.mockup-iphone,
+.mockup-ipad {
+  display: none;
+}
+
+.comment {
+  position: absolute;
+  top: 0;
+  left: -30%;
+}
+
+.comment2 {
+  position: absolute;
+  top: 60%;
+  right: -30%;
+}
+
+.fukidasi1,
+.fukidasi2 {
+  display: inline-block;
+  position: relative;
+  font-family: "Kosugi Maru", sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 20px;
+}
+
+.fukidasi1:before {
+  content: "";
+  position: absolute;
+  bottom: -31px;
+  right: 40px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid #666;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  transform-origin: left top;
+  transform: skewX(40deg);
+}
+
+.fukidasi1:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: 41px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid #fff;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  transform-origin: left top;
+  transform: skewX(40deg);
+}
+
+.fukidasi2:before {
+  content: "";
+  position: absolute;
+  top: -31px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #666;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  transform: skewX(40deg);
+}
+
+.fukidasi2:after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 31px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #fff;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  transform: skewX(40deg);
+}
+
+.arrow {
+  margin: 0 auto;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//フッター
+//------------------------------------------------------------------------------------------------------------
+footer {
+  background-color: rgb(105, 105, 105);
+  width: 100%;
+  height: 400px;
+}
+
+@media screen and (max-width: 767px) {
+  .catch-phrase {
+    font-size: 45px;
+  }
+  .app-description {
+    font-size: 14px;
+  }
+  br.laptop {
+    display: none;
+  }
+  br.iphone {
+    display: inline;
+  }
+  #svg-bg-iphone {
+    display: block;
+  }
+  #svg-bg {
+    display: none;
+  }
+  .content {
+    font-size: 0.5rem;
+  }
+  .manual-title1,
+  .manual-title2 {
+    font-size: 1rem;
+  }
+  .mockup-iphone {
+    display: inline-block;
+  }
+  .mockup-laptop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .mockup-ipad {
+    display: inline-block;
+  }
+  .mockup-laptop {
+    display: none;
+  }
+  .comment {
+    top: 20px;
+  }
+  .fukidasi1::before,
+  .fukidasi1::after {
+    right: 50%;
+  }
 }

@@ -51,3 +51,9 @@ header {
   line-height: 50px;
   font-family: "Kosugi Maru", sans-serif;
 }
+
+@media screen and (max-width: 767px) {
+  header {
+    text-align: center;
+  }
+}
