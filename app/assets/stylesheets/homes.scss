@@ -15,14 +15,12 @@ main {
 }
 
 .catch-phrase {
-  font-family: "Kosugi Maru", sans-serif;
   color: #000;
   font-size: 100px;
   margin-bottom: 60px;
 }
 
 .app-description {
-  font-family: "Kosugi Maru", sans-serif;
   font-size: 20px;
   margin-bottom: 50px;
   line-height: 30px;
@@ -110,7 +108,6 @@ a.btn-border-shadow:hover:before {
 
 .manual-title1,
 .manual-title2 {
-  font-family: "Kosugi Maru", sans-serif;
   font-size: 2rem;
   color: #000;
   margin-bottom: 50px;
@@ -151,7 +148,6 @@ a.btn-border-shadow:hover:before {
 .fukidasi2 {
   display: inline-block;
   position: relative;
-  font-family: "Kosugi Maru", sans-serif;
   margin: 20px;
   padding: 20px;
   background: #fff;
@@ -215,15 +211,6 @@ a.btn-border-shadow:hover:before {
 
 .arrow {
   margin: 0 auto;
-}
-
-//------------------------------------------------------------------------------------------------------------
-//フッター
-//------------------------------------------------------------------------------------------------------------
-footer {
-  background-color: rgb(105, 105, 105);
-  width: 100%;
-  height: 400px;
 }
 
 @media screen and (max-width: 767px) {
