@@ -5,16 +5,25 @@
 #search-page {
   margin-top: 50px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: url(people.png);
   background-position: center;
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: lighten;
+  position: relative;
+}
+
+.search-field {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
 }
 
 .catch-phrase-area2 {
-  padding: 70px 50px 50px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
@@ -64,6 +73,7 @@ br.iphone {
 }
 
 .trend-area {
+  max-width: 800px;
   width: 60%;
   height: 200px;
   border-radius: 40px;
@@ -82,6 +92,9 @@ br.iphone {
   .catch-phrase2 {
     font-size: 50px;
     text-align: left;
+  }
+  .trend-area {
+    border-radius: 30px;
   }
 }
 

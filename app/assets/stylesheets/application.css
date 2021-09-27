@@ -36,6 +36,16 @@ h3 {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   height: 50px;
@@ -45,20 +55,59 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
-  color: #fff;
   font-size: 1.875rem;
-  line-height: 50px;
   font-family: "Kosugi Maru", sans-serif;
 }
 
-/* ------------------------------------------------------------------------------------------------------------ */
-/* フッター */
-/* ------------------------------------------------------------------------------------------------------------ */
-footer {
-  background-color: rgb(105, 105, 105);
-  width: 100%;
-  height: 400px;
+.icon ul {
+  display: flex;
+}
+
+.icon ul li {
+  text-align: center;
+  padding-left: 50px;
+}
+
+.icon a {
+  color: #fff;
+}
+
+.icon-iphone {
+  display: none;
+}
+
+@media screen and (max-width: 539px) {
+  .icon {
+    display: none;
+  }
+  .icon-iphone {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    z-index: 10;
+  }
+
+  .icon-iphone ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon-iphone li {
+    text-align: center;
+    width: 33%;
+  }
+
+  .icon-iphone a {
+    color: #fff;
+  }
 }
