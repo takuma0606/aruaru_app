@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-main {
+#top-page {
   width: 100%;
   text-align: center;
   background-image: url(people-img.png);
@@ -216,6 +216,15 @@ a.btn-border-shadow:hover:before {
   margin: 0 auto;
 }
 
+/* ------------------------------------------------------------------------------------------------------------ */
+/* フッター */
+/* ------------------------------------------------------------------------------------------------------------ */
+footer {
+  background-color: rgb(105, 105, 105);
+  width: 100%;
+  height: 400px;
+}
+
 @media screen and (max-width: 767px) {
   .catch-phrase {
     font-size: 45px;
@@ -248,15 +257,6 @@ a.btn-border-shadow:hover:before {
   .mockup-laptop {
     display: none;
   }
-}
-
-/* ------------------------------------------------------------------------------------------------------------ */
-/* フッター */
-/* ------------------------------------------------------------------------------------------------------------ */
-footer {
-  background-color: rgb(105, 105, 105);
-  width: 100%;
-  height: 400px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
