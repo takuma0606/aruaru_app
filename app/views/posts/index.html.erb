@@ -1,10 +1,25 @@
 <main id="index-page">
+<div class="header-field">
+  <div class="search-box">
+    <input class="search-txt" type="text" name="" placeholder="  #検索">
+    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+  </div>
+</div>
 <div class="container">
   <div class="posts-area">
     <% 9.times do %>
       <div class="post"></div>
     <% end %>
   </div>
-  <aside></aside>
+  <aside>
+    <div class="ads"></div>
+    <div class="user-ranking">
+      <ul>
+      <% 9.times do %>
+        <li></li>
+      <% end %>
+      </ul>
+    </div>
+  </aside>
 </div>
 </main>
