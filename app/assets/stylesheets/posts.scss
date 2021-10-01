@@ -75,11 +75,137 @@
   background-color: #fff;
   border: 2px solid #e2e2e2;
   transition: 0.2s;
+  padding: 20px;
+  position: relative;
 }
 
 .post:hover {
   box-shadow: 0 6px 31px -2px rgb(221, 221, 221);
   transform: translate(0, -10px);
+}
+
+.post .text {
+  font-size: 1.56rem;
+  margin: 0;
+  height: 128px;
+  color: rgb(160, 157, 157);
+}
+
+.function {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 230px;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-area button {
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  outline: none;
+  color: #fff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.aruaru-btn {
+  background-color: #ff5050;
+  border-bottom: 5px solid #cc3737;
+}
+
+.aruaru-btn:hover {
+  margin-top: 3px;
+  color: rgb(255, 255, 255);
+  background: #ff5050;
+  border-bottom: 2px solid #cc3737;
+}
+
+.nainai-btn {
+  background-color: #a7a7a7;
+  border-bottom: 5px solid #868686;
+}
+
+.nainai-btn:hover {
+  margin-top: 3px;
+  color: rgb(255, 255, 255);
+  background: #a7a7a7;
+  border-bottom: 2px solid #868686;
+}
+
+.bar {
+  width: 80px;
+  height: 8px;
+  display: flex;
+}
+
+.aruaru-bar {
+  width: 70%;
+  background-color: #ff5050;
+}
+
+.nainai-bar {
+  width: 30%;
+  background-color: #a7a7a7;
+}
+
+.count-area {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px auto;
+}
+
+.aruaru-count {
+  color: #ff5050;
+}
+
+.nainai-count {
+  color: #a7a7a7;
+}
+
+.footer-area {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.user-name {
+  width: 60%;
+}
+
+.other-btn {
+  width: 30%;
+}
+
+.other-btn a {
+  padding-left: 5px;
+}
+
+.fa-comment {
+  color: #a7a7a7;
+}
+
+.fa-star {
+  color: yellow;
 }
 
 aside {
@@ -113,15 +239,30 @@ aside {
     width: 300px;
     height: 300px;
   }
+  .function {
+    width: 260px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .posts-area {
     width: 378px;
   }
   .post {
     width: 378px;
     height: 378px;
+    padding: 30px;
+  }
+  .function {
+    width: 318px;
+    right: 30px;
+    bottom: 30px;
+  }
+  .other-btn {
+    width: 20%;
+  }
+  .bar {
+    width: 140px;
   }
 }
 
@@ -155,5 +296,20 @@ aside {
     margin: 0 auto 30px;
     width: 250px;
     height: 250px;
+    padding: 20px;
+  }
+  .function {
+    width: 210px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .btn-area button {
+    font-size: 0.75rem;
+  }
+  .bar {
+    width: 70px;
+  }
+  .other-btn {
+    width: 35%;
   }
 }
