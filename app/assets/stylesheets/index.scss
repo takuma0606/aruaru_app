@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// ----------------------------------------------------------------------------------------------------
-// index
-// ----------------------------------------------------------------------------------------------------
-
 #index-page {
   padding: 80px 30px;
   width: 100%;
@@ -16,8 +12,13 @@
   max-width: 1330px;
   margin: 0px auto 30px;
   height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.post-number {
+  font-size: 1.125rem;
+}
 .header-field .search-box {
   background: #ffffff;
   height: 60px;
@@ -25,7 +26,7 @@
   padding: 10px;
   width: 250px;
   border: 1px solid #000;
-  float: right;
+  margin: 0;
 }
 .search-btn {
   float: right;
@@ -267,11 +268,13 @@ aside {
 }
 
 @media screen and (max-width: 767px) {
-  .header-field .search-box {
-    float: none;
-    margin: 0 auto;
+  .header-field {
+    flex-direction: column-reverse;
+    height: 80px;
   }
-
+  .post-number {
+    margin-top: 10px;
+  }
   aside {
     display: none;
   }
