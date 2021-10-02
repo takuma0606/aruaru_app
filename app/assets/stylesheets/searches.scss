@@ -1,0 +1,104 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search-page {
+  margin-top: 50px;
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(people-img.png);
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  position: relative;
+}
+
+.search-field {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.catch-phrase-area2 {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.catch-phrase2 {
+  display: inline-block;
+  font-size: 80px;
+}
+
+br.tablet,
+br.iphone {
+  display: none;
+}
+
+.search-box {
+  background: #ffffff;
+  height: 60px;
+  border-radius: 60px;
+  padding: 10px;
+  width: 250px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+.search-btn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.search-btn i {
+  background: none;
+  color: #29c6a5;
+}
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #000000;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.trend-area {
+  max-width: 800px;
+  width: 60%;
+  height: 200px;
+  border-radius: 40px;
+  border: 3px solid rgb(160, 160, 160);
+  background-color: #fff;
+  margin: 50px auto 0;
+}
+
+@media screen and (max-width: 767px) {
+  br.iphone {
+    display: inline;
+  }
+  br.tablet {
+    display: inline;
+  }
+  .catch-phrase2 {
+    font-size: 50px;
+    text-align: left;
+  }
+  .trend-area {
+    border-radius: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  br.tablet {
+    display: inline;
+  }
+}
