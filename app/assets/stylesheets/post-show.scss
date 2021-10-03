@@ -56,6 +56,59 @@
   width: 100% !important;
 }
 
+.fixed-comment-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 6px 31px -2px rgb(204, 203, 203);
+}
+
+.fixed-comment-btn i {
+  color: rgb(165, 165, 165);
+}
+
+.create-comment {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  height: 40px;
+  width: 100%;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.create-comment input {
+  background-color: rgb(206, 206, 206);
+  border: none;
+  width: 80%;
+}
+
+.create-comment button {
+  color: #fff;
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (max-width: 539px) {
+  .fixed-comment-btn {
+    display: none;
+  }
+  .create-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 @media screen and (max-width: 370px) {
   .option {
     right: 20px;

@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/' => 'homes#top'
   get '/search' => 'searches#search'
   get '/user' => 'users#user'
+  get '/user/posts' => 'users#user_posts'
 end

@@ -10,7 +10,7 @@
   <div class="posts-area">
     <% 9.times do %>
       <div class="post">
-        <p class="text">テスト中先生の行動確認しがち</p>
+        <a href="/posts/1" class="text">テスト中先生の行動確認しがち</a>
         <div class="function">
           <div class="btn-area">
             <button type="button" class="aruaru-btn">あるある</button>
@@ -26,7 +26,7 @@
           </div>
           <div class="footer-area">
             <div class="user-area">
-              <p class="user-name">mike</p>
+              <a href="/user/posts" class="user-name">mike</a>
               <%= image_tag 'Eric-cartman.png' %>
             </div>
             <div class="other-btn">
@@ -42,8 +42,15 @@
     <div class="ads"></div>
     <div class="user-ranking">
       <ul>
-      <% 9.times do %>
-        <li></li>
+      <li>あるある取得ランキング</li>
+      <% 8.times do |number|%>
+        <li>
+        <div class="user-area">
+          <p><%= number + 1 %></p>
+          <%= image_tag 'Eric-cartman.png' %>
+          <a href="/user/posts" class="user-name">mike</a>
+        </div>
+        </li>
       <% end %>
       </ul>
     </div>
