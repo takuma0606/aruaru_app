@@ -1,0 +1,80 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-menu-page {
+  display: block;
+  height: 100vh;
+}
+
+.user-container {
+  max-width: 1012px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 70px 20px 0;
+}
+
+.user-name-area {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.user-name-area div {
+  display: flex;
+  align-items: center;
+}
+
+.user-name-area img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 1px solid #000;
+}
+
+.user-box {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.user-menu {
+  width: 30%;
+  height: 400px;
+  background-color: red;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.user-menu ul {
+  margin: 0;
+}
+
+.user-menu li {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+.user-menu li:first-child {
+  text-align: center;
+}
+
+.menu-content {
+  width: 60%;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .user-box {
+    flex-direction: column;
+  }
+  .user-menu {
+    width: 100%;
+  }
+  .menu-content {
+    width: 100%;
+  }
+}

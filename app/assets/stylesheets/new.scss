@@ -1,13 +1,12 @@
 #new-page {
-  padding: 70px 30px;
-  width: 100%;
-  height: 100vh;
+  display: block;
 }
 
 .create-box {
+  padding: 70px 20px 0;
   margin: 0 auto;
-  width: 500px;
-  height: 600px;
+  max-width: 500px;
+  height: 750px;
 }
 
 .create-box textarea {
@@ -17,6 +16,10 @@
   padding: 30px;
   font-size: 1.75rem;
   resize: none;
+}
+
+.create-box textarea:focus {
+  outline: none;
 }
 
 .create-box label {
@@ -58,24 +61,12 @@
   border-right: none;
   background-color: #ff5050;
   border-bottom: 5px solid #cc3737;
-  margin: 20px auto 0;
+  margin: 40px auto 0;
 }
 
 .create-button:hover {
-  margin-top: 23px;
+  margin-top: 43px;
   color: rgb(255, 255, 255);
   background: #ff5050;
   border-bottom: 2px solid #cc3737;
-}
-
-@media screen and (max-width: 550px) {
-  .create-box {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .create-box {
-    width: 250px;
-  }
 }

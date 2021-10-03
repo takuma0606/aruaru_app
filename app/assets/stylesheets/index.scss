@@ -186,11 +186,22 @@
 .footer-area {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
 }
 
-.user-name {
+.user-area {
   width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.user-area img {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
 }
 
 .other-btn {
@@ -239,6 +250,10 @@ aside {
   .post {
     width: 300px;
     height: 300px;
+  }
+  .post:hover {
+    box-shadow: none;
+    transform: none;
   }
   .function {
     width: 260px;
@@ -300,6 +315,10 @@ aside {
     width: 250px;
     height: 250px;
     padding: 20px;
+  }
+  .post .text {
+    font-size: 1.125rem;
+    height: 108px;
   }
   .function {
     width: 210px;
