@@ -94,9 +94,9 @@
 
 .function {
   position: absolute;
+  left: 20px;
   right: 20px;
   bottom: 20px;
-  width: 230px;
 }
 
 .btn-area {
@@ -206,10 +206,12 @@
 
 .other-btn {
   width: 30%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .other-btn a {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .fa-comment {
@@ -255,9 +257,6 @@ aside {
     box-shadow: none;
     transform: none;
   }
-  .function {
-    width: 260px;
-  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -270,7 +269,7 @@ aside {
     padding: 30px;
   }
   .function {
-    width: 318px;
+    left: 30px;
     right: 30px;
     bottom: 30px;
   }
@@ -311,7 +310,6 @@ aside {
     display: block;
   }
   .post {
-    margin: 0 auto 30px;
     width: 250px;
     height: 250px;
     padding: 20px;
@@ -321,7 +319,7 @@ aside {
     height: 108px;
   }
   .function {
-    width: 210px;
+    left: 20px;
     right: 20px;
     bottom: 20px;
   }
