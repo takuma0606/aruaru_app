@@ -1,0 +1,121 @@
+#show-page {
+  display: block;
+}
+
+.show-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 80px 20px 100px;
+}
+
+.post-detail {
+  width: 100% !important;
+  height: 400px !important;
+  position: relative !important;
+}
+
+.post-detail:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.option {
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  bottom: 30px;
+}
+
+.mater {
+  width: 50%;
+  height: 8px;
+  display: flex;
+}
+
+.comment-area {
+  border-radius: 20px;
+  border: 2px solid #e2e2e2;
+}
+
+.comment-area ul {
+  margin: 0;
+}
+
+.comment-area li {
+  border-bottom: 2px solid #e2e2e2;
+  padding: 10px 10px 0;
+}
+
+.comment-area li:last-child {
+  border: none;
+}
+
+.comment-area .user-area {
+  justify-content: flex-end;
+  margin: 5px 0;
+  width: 100% !important;
+}
+
+.fixed-comment-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 6px 31px -2px rgb(204, 203, 203);
+}
+
+.fixed-comment-btn i {
+  color: rgb(165, 165, 165);
+}
+
+.create-comment {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  height: 40px;
+  width: 100%;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.create-comment input {
+  background-color: rgb(206, 206, 206);
+  border: none;
+  width: 80%;
+}
+
+.create-comment button {
+  color: #fff;
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (max-width: 539px) {
+  .fixed-comment-btn {
+    display: none;
+  }
+  .create-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .option {
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+  }
+  .mater {
+    width: 40%;
+  }
+}

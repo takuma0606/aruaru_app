@@ -86,6 +86,7 @@
 }
 
 .post .text {
+  display: block;
   font-size: 1.56rem;
   margin: 0;
   height: 128px;
@@ -94,9 +95,9 @@
 
 .function {
   position: absolute;
+  left: 20px;
   right: 20px;
   bottom: 20px;
-  width: 230px;
 }
 
 .btn-area {
@@ -186,19 +187,43 @@
 .footer-area {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
 }
 
-.user-name {
+.user-area {
   width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.user-area .user-name {
+  margin-left: 10px;
+  display: block;
+  color: #000;
+}
+
+.user-area .user-name:hover {
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+
+.user-area img {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
 }
 
 .other-btn {
   width: 30%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .other-btn a {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .fa-comment {
@@ -223,13 +248,14 @@ aside {
 
 .user-ranking {
   width: 80%;
-  background-color: grey;
   margin: 0 auto;
 }
 
 .user-ranking li {
   border-bottom: 1px solid #000;
   height: 50px;
+  text-align: center;
+  padding: 15px 10px;
 }
 
 @media screen and (max-width: 1240px) {
@@ -240,8 +266,9 @@ aside {
     width: 300px;
     height: 300px;
   }
-  .function {
-    width: 260px;
+  .post:hover {
+    box-shadow: none;
+    transform: none;
   }
 }
 
@@ -255,7 +282,7 @@ aside {
     padding: 30px;
   }
   .function {
-    width: 318px;
+    left: 30px;
     right: 30px;
     bottom: 30px;
   }
@@ -296,13 +323,16 @@ aside {
     display: block;
   }
   .post {
-    margin: 0 auto 30px;
     width: 250px;
     height: 250px;
     padding: 20px;
   }
+  .post .text {
+    font-size: 1.125rem;
+    height: 108px;
+  }
   .function {
-    width: 210px;
+    left: 20px;
     right: 20px;
     bottom: 20px;
   }
