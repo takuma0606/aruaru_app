@@ -24,7 +24,7 @@
   height: 60px;
   border-radius: 60px;
   padding: 10px;
-  width: 250px;
+  width: 260px;
   border: 1px solid #000;
   margin: 0;
 }
@@ -64,7 +64,6 @@
 .posts-area {
   width: 850px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -72,6 +71,7 @@
   width: 270px;
   height: 270px;
   margin-bottom: 30px;
+  margin-right: 13px;
   border-radius: 30px;
   background-color: #fff;
   border: 2px solid #e2e2e2;
@@ -91,6 +91,7 @@
   margin: 0;
   height: 128px;
   color: rgb(160, 157, 157);
+  word-break: break-all;
 }
 
 .function {

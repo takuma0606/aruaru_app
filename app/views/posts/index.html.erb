@@ -8,9 +8,9 @@
 </div>
 <div class="container">
   <div class="posts-area">
-    <% 9.times do %>
+    <% @posts.each do |post| %>
       <div class="post">
-        <a href="/posts/1" class="text">ああああああああああああああ</a>
+        <%= link_to post.content, "/posts/#{post.id}", class: "text" %>
         <div class="function">
           <div class="btn-area">
             <button type="button" class="aruaru-btn">あるある</button>

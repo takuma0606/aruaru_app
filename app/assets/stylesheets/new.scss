@@ -16,6 +16,7 @@
   padding: 30px;
   font-size: 1.75rem;
   resize: none;
+  margin: 0px 0px 20px 0px;
 }
 
 .create-box textarea:focus {
@@ -28,7 +29,7 @@
   font-size: 1.25rem;
 }
 
-.text-box #text {
+.text-box .content {
   height: 300px;
   border-radius: 30px;
 }

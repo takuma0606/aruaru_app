@@ -1,15 +1,11 @@
 <main id="new-page">
   <div class="create-box">
-    <form action="" method="get" class="create-form">
+    <%= form_with model: @post do |f| %>
       <div class="text-box">
-        <label for="text" class="text-label">・テキスト</label>
-        <textarea name="text" id="text" placeholder="(例)テスト中掃除始める先生" required></textarea>
+        <%= f.label :content, "・テキスト", class: "text-label" %>
+        <%= f.text_area :content, class: "content", placeholder: "授業中先生掃除しがち" %>
       </div>
-      <div class="tag-box">
-        <label for="tag" class="tag-label">・タグ</label>
-        <textarea name="tag" id="tag" placeholder="(例)＃学校" required></textarea>
-      </div>
-      <button type="button" class="create-button">投稿</button>
-    </form>
+      <%= f.submit "投稿", class: "create-button" %>
+    <% end %>
   </div>
 </main>
