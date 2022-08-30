@@ -4,6 +4,7 @@
       <div class="text-box">
         <%= f.label :content, "・テキスト", class: "text-label" %>
         <%= f.text_area :content, class: "content", placeholder: "授業中先生掃除しがち" %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
       </div>
       <%= f.submit "投稿", class: "create-button" %>
     <% end %>

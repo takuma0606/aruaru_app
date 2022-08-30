@@ -79,11 +79,9 @@ header {
 .icon ul li {
   text-align: center;
   padding-left: 50px;
-}
-
-.icon a {
   color: #fff;
 }
+
 
 .icon-iphone {
   display: none;
