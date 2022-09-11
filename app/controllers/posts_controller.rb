@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: %i[ new user ]
 
   def user
   end
@@ -10,7 +10,13 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @q = Tag.ransack(params[:q])
+    @tag = @q.result.first
+    if @tag
+      @posts = @tag.posts
+    else 
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1 or /posts/1.json
@@ -19,7 +25,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @form = PostsForm.new
   end
 
   # GET /posts/1/edit
@@ -28,16 +34,13 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to posts_path, notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    @form = PostsForm.new(post_params)
+    tag_list = params[:posts_form][:name].split(",")
+    if @form.valid?
+      @form.save(tag_list)
+      redirect_to posts_path
+    else
+      render :new
     end
   end
 
@@ -69,8 +72,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:id, :content, :user_id)
+      params.require(:posts_form).permit(:content, :name).merge(user_id: current_user.id)
     end
 end

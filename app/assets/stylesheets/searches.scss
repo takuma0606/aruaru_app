@@ -36,40 +36,6 @@ br.iphone {
   display: none;
 }
 
-.search-box {
-  background: #ffffff;
-  height: 60px;
-  border-radius: 60px;
-  padding: 10px;
-  width: 250px;
-  margin: 0 auto;
-  border: 1px solid #000;
-}
-.search-btn {
-  float: right;
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.search-btn i {
-  background: none;
-  color: #29c6a5;
-}
-.search-txt {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: #000000;
-  font-size: 16px;
-  line-height: 40px;
-}
 
 .trend-area {
   max-width: 800px;

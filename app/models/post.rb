@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
   belongs_to :user
-  validates :content, presence: true
+  has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_tags, dependent: :destroy
 end

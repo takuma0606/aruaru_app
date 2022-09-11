@@ -33,7 +33,8 @@ body {
 
 h1,
 h3,
-p {
+p,
+ul {
   margin: 0;
 }
 
@@ -72,8 +73,50 @@ header {
   font-family: "Kosugi Maru", sans-serif;
 }
 
+.search-box {
+  background: #f15b5b;
+  height: 40px;
+  border-radius: 60px;
+  padding: 10px;
+  width: 260px;
+  border: 1px solid #f15b5b;
+  margin: 0;
+}
+.search-btn {
+  float: right;
+  width: 20px;
+  height: 20px;
+  background: #f15b5b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+}
+
+.search-btn i {
+  background: none;
+  color: #ffff;
+  cursor: pointer;
+}
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.search-txt::placeholder {
+  color: #fff;
+}
+
 .icon ul {
   display: flex;
+  align-items: center;
 }
 
 .icon ul li {

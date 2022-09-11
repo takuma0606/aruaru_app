@@ -1,10 +1,10 @@
 <main id="index-page">
 <div class="header-field">
-  <p class="post-number">＃学校 54件</p>
-  <div class="search-box">
-    <input class="search-txt" type="text" name="" placeholder="  #検索">
-    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-  </div>
+  <% if @tag %>
+  <p class="post-number">#<%= @tag.name %> <%= @posts.count %>件</p>
+  <% else %>
+  <p class="post-number">検索されたワードの投稿はありませんでした</p>
+  <% end %>
 </div>
 <div class="container">
   <div class="posts-area">
@@ -26,7 +26,9 @@
           </div>
           <div class="footer-area">
             <div class="user-area">
-              <a href="/user/posts" class="user-name"><%= post.user.name %></a>
+              <% post.post_tags.each do |post_tag| %>
+              <a href="/user/posts" class="user-name"><%= post_tag.tag.name %></a>
+              <% end %>
               <%= image_tag 'Eric-cartman.png' %>
             </div>
             <div class="other-btn">
