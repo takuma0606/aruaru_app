@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[ new user ]
-
-  def user
-  end
+  before_action :authenticate_user!, only: %i[ new edit ]
+  before_action :check_user, only: %i[  edit destroy ]
 
   def user_posts
   end
@@ -30,6 +28,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @tag_list = @post.tags.pluck(:name).join(",")
+    @form = PostsForm.new(post: @post)
   end
 
   # POST /posts or /posts.json
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     tag_list = params[:posts_form][:name].split(",")
     if @form.valid?
       @form.save(tag_list)
-      redirect_to posts_path
+      redirect_to users_my_posts_path
     else
       render :new
     end
@@ -46,24 +46,19 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    @form = PostsForm.new(post_update_params, post: @post)
+    tag_list = params[:posts_form][:name].split(",")
+    if @form.update(tag_list)
+      redirect_to users_my_posts_path
+    else
+      render :edit
     end
   end
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to users_my_posts_path
   end
 
   private
@@ -71,6 +66,15 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
+
+    def check_user
+      redirect_to users_my_posts_path unless @post.user.id == current_user.id
+    end
+
+    def post_update_params
+      params.require(:posts_form).permit(:content, :name).merge(user_id: current_user.id, post_id: params[:id])    
+    end
+  
 
     def post_params
       params.require(:posts_form).permit(:content, :name).merge(user_id: current_user.id)

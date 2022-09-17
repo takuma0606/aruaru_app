@@ -1,17 +1,19 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+<main id="new-page">
+  <div class="create-box">
+    <% if form == @form %>
+    <%= form_with model: form, url:posts_path do |f| %>
+    <% else %>
+    <%= form_with model: form, url:post_path, method: :patch do |f| %>
+    <% end %>
+      <div class="text-box">
+        <%= f.label :content, "・テキスト", class: "text-label" %>
+        <%= f.text_area :content, class: "content", placeholder: "授業中先生掃除しがち" %>
+      </div>
+      <div class="tag-box">
+        <%= f.label :name, "・タグ", class: "tag-label" %>
+        <%= f.text_area :name, class: "tag", placeholder: "(例)学校" %>
+      </div>
+      <%= f.submit "投稿", class: "create-button" %>
+    <% end %>
   </div>
-<% end %>
+</main>

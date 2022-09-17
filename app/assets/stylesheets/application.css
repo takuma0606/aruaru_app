@@ -130,12 +130,12 @@ header {
   display: none;
 }
 
-@media screen and (max-width: 539px) {
+@media screen and (max-width: 870px) {
   .icon {
     display: none;
   }
   .icon-iphone {
-    display: block;
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -144,18 +144,11 @@ header {
     z-index: 10;
   }
 
-  .icon-iphone ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .icon-iphone li {
-    text-align: center;
-    width: 33%;
-  }
-
   .icon-iphone a {
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 33%;
   }
 }

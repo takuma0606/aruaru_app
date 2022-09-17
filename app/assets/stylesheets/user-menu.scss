@@ -2,17 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user-menu-page {
-  display: block;
-  height: 100vh;
-}
-
-.user-container {
-  max-width: 1012px;
-  margin: 0 auto;
-  height: 100vh;
-  padding: 70px 20px 0;
-}
 
 .user-name-area {
   width: 100%;
@@ -39,13 +28,10 @@
 
 .user-menu {
   width: 30%;
+  height: 280px;
   background-color: red;
   border-radius: 10px;
   color: #fff;
-}
-
-.user-menu ul {
-  margin: 0;
 }
 
 .user-menu li {
@@ -60,12 +46,8 @@
   text-align: center;
 }
 
-.menu-content {
-  width: 60%;
-  height: 100%;
-}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 870px) {
   .user-box {
     flex-direction: column;
   }

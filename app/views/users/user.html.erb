@@ -1,0 +1,26 @@
+<main id="page">
+  <div class="container">
+    <div class="user-name-area">
+      <div>
+      <%= image_tag 'Eric-cartman.png' %>
+      <p><%= current_user.name %></p>
+      </div>
+    </div>
+    <div class="user-box">
+      <div class="user-menu">
+        <ul>
+        <li>アカウント設定</li>
+        <li>プロフィール</li>
+        <li><%= link_to "自分の投稿", users_my_posts_path(myposts: "my_posts") %></li>
+        <li>お気に入り登録した投稿</li>
+        <li>パスワード変更</li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li>退会</li>
+        </ul>
+      </div>
+      <% if @myposts %>
+      <%= render 'my_posts' %>
+      <% end %>
+    </div>
+  </div>
+</main>

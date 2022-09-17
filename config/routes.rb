@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/user' => 'users#user'
+  get 'users/my_posts'
+  get 'users/my_posts/:id' => 'users#show'
   devise_for :users
   resources :posts
   devise_scope :user do
@@ -7,7 +10,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/' => 'homes#top'
   get '/search' => 'searches#search'
-  get '/user' => 'posts#user'
   get '/user/posts' => 'posts#user_posts'
   root to: "searches#search"             
 end

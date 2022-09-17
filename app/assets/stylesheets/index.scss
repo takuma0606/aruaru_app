@@ -2,15 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#index-page {
+#page {
   padding: 80px 30px;
-  width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .header-field {
   width: 100%;
-  max-width: 1330px;
-  margin: 0px auto 30px;
+  margin-bottom: 30px;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -20,15 +23,13 @@
   font-size: 1.125rem;
 }
 
-.container {
-  margin: 0 auto;
+.index-box {
   display: flex;
   justify-content: space-between;
-  max-width: 1330px;
 }
 
 .posts-area {
-  width: 850px;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -202,7 +203,7 @@
 }
 
 aside {
-  width: 300px;
+  width: 30%;
   height: 500px;
 }
 
@@ -225,23 +226,10 @@ aside {
   padding: 15px 10px;
 }
 
-@media screen and (max-width: 1240px) {
-  .posts-area {
-    width: 630px;
-  }
-  .post {
-    width: 300px;
-    height: 300px;
-  }
-  .post:hover {
-    box-shadow: none;
-    transform: none;
-  }
-}
 
-@media screen and (max-width: 1023px) {
-  .posts-area {
-    width: 378px;
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 80%;
   }
   .post {
     width: 378px;
