@@ -1,0 +1,25 @@
+<div class="function">
+  <div class="btn-area">
+    <button type="button" class="aruaru-btn">あるある</button>
+    <div class="bar">
+    <div class="aruaru-bar"></div>
+    <div class="nainai-bar"></div>
+    </div>
+    <button type="button" class="nainai-btn">ないない</button>
+  </div>
+  <div class="count-area">
+    <p class="aruaru-count">+576</p>
+    <p class="nainai-count">-234</p>
+  </div>
+  <div class="footer-area">
+    <div class="tag-area">
+      <% post.post_tags.each do |post_tag| %>
+        <p class="tag-name">#<%= post_tag.tag.name %></p>
+      <% end %>
+    </div>
+    <div class="other-btn">
+      <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
+      <a href=""><i class="fas fa-star fa-lg"></i></a>
+    </div>
+  </div>
+</div>

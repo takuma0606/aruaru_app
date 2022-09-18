@@ -11,33 +11,9 @@
     <div class="posts-area">
       <% @posts.each do |post| %>
         <div class="post">
+          <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
           <%= link_to post.content, "/posts/#{post.id}", class: "text" %>
-          <div class="function">
-            <div class="btn-area">
-              <button type="button" class="aruaru-btn">あるある</button>
-              <div class="bar">
-              <div class="aruaru-bar"></div>
-              <div class="nainai-bar"></div>
-              </div>
-              <button type="button" class="nainai-btn">ないない</button>
-            </div>
-            <div class="count-area">
-              <p class="aruaru-count">+576</p>
-              <p class="nainai-count">-234</p>
-            </div>
-            <div class="footer-area">
-              <div class="user-area">
-                <% post.post_tags.each do |post_tag| %>
-                  <%= link_to post_tag.tag.name, posts_path(q: post_tag.tag.name), class: "user-name" %>
-                <% end %>
-                <%= image_tag 'Eric-cartman.png' %>
-              </div>
-              <div class="other-btn">
-                <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
-                <a href=""><i class="fas fa-star fa-lg"></i></a>
-              </div>
-            </div>
-          </div>
+          <%= render 'partial_template/post_function', post: post %>
         </div>
       <% end %>
     </div>
@@ -48,11 +24,6 @@
         <li>あるある取得ランキング</li>
         <% 8.times do |number|%>
           <li>
-          <div class="user-area">
-            <p><%= number + 1 %></p>
-            <%= image_tag 'Eric-cartman.png' %>
-            <a href="/user/posts" class="user-name">mike</a>
-          </div>
           </li>
         <% end %>
         </ul>
