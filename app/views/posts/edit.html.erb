@@ -1,14 +1,9 @@
 <main id="new-page">
   <div class="create-box">
     <%= form_with model: @form, url:post_path, method: :patch do |f| %>
-      <div class="text-box">
-        <%= f.label :content, "・テキスト", class: "text-label" %>
-        <%= f.text_area :content, class: "content", placeholder: "授業中先生掃除しがち" %>
-      </div>
-      <div class="tag-box">
-        <%= f.label :name, "・タグ", class: "tag-label" %>
-        <%= f.text_area :name, class: "tag", placeholder: "(例)学校" %>
-      </div>
+      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to current_user.name, user_posts_path %></p>
+      <%= f.text_area :content, class: "content", placeholder: "テキスト" %>
+      <%= f.text_area :name, class: "tag", placeholder: "タグ" %>
       <%= f.submit "更新", class: "create-button" %>
     <% end %>
   </div>
