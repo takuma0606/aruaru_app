@@ -16,21 +16,24 @@
 }
 
 .create-box textarea {
+  overflow: hidden;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 2px solid #e2e2e2;
-  font-size: 1.125rem;
+  border-bottom: 2px solid #b6c3c6;
   color: rgb(160, 157, 157);
+  font-size: 1.3rem;
   resize: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
   &::placeholder {
     color: rgb(160, 157, 157);
   }
+  &:focus {
+    outline: 0;
+  }
 }
 
-.create-box textarea:focus {
-  outline: none;
-}
 
 .create-button {
   display: block;

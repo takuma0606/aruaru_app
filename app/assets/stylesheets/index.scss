@@ -202,7 +202,6 @@
 
 aside {
   width: 30%;
-  height: 500px;
   .ads {
     width: 100%;
     height: 300px;
@@ -210,6 +209,9 @@ aside {
     margin-bottom: 50px;
   }
   .user-ranking {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
     width: 80%;
     margin: 0 auto;
     li {

@@ -5,7 +5,9 @@
 
 .user-name-area {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+  position: sticky;
+  top: 80px;
 }
 
 .user-name-area div {
@@ -27,6 +29,8 @@
 }
 
 .user-menu {
+  position: sticky;
+  top: 148px;
   width: 30%;
   height: 280px;
   background-color: red;
