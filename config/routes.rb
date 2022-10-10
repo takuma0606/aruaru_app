@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   get 'users/my_posts'
   get 'users/my_posts/:id' => 'users#show'
   devise_for :users
-  resources :posts
+  resources :posts do
+    member do
+      post :aruaru
+      post :nainai
+    end
+  end
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

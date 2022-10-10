@@ -1,0 +1,2 @@
+class Aruaru < ApplicationRecord
+end

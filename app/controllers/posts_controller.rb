@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy aruaru nainai ]
   before_action :authenticate_user!, only: %i[ new edit ]
   before_action :check_user, only: %i[  edit destroy ]
 
@@ -59,6 +59,14 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to users_my_posts_path
+  end
+
+  def aruaru
+    Aruaru.create(post_id: params[:id], user_id: current_user.id)
+  end
+
+  def nainai
+    Nainai.create(post_id: params[:id], user_id: current_user.id)
   end
 
   private

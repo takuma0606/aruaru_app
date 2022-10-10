@@ -10,9 +10,7 @@
   <div class="index-box">
     <div class="posts-area">
       <% @posts.each do |post| %>
-        <div class="post">
-          <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
-          <%= link_to post.content, "/posts/#{post.id}", class: "text" %>
+        <div class="post post_<%= post.id %>">
           <%= render 'partial_template/post_function', post: post %>
         </div>
       <% end %>
