@@ -1,59 +1,26 @@
-<main id="index-page">
-<div class="header-field">
-  <p class="post-number">＃学校 54件</p>
-  <div class="search-box">
-    <input class="search-txt" type="text" name="" placeholder="  #検索">
-    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-  </div>
-</div>
+<main id="page">
 <div class="container">
-  <div class="posts-area">
-    <% 9.times do %>
-      <div class="post">
-        <a href="/posts/1" class="text">テスト中先生の行動確認しがち</a>
-        <div class="function">
-          <div class="btn-area">
-            <button type="button" class="aruaru-btn">あるある</button>
-            <div class="bar">
-            <div class="aruaru-bar"></div>
-            <div class="nainai-bar"></div>
-            </div>
-            <button type="button" class="nainai-btn">ないない</button>
-          </div>
-          <div class="count-area">
-            <p class="aruaru-count">+576</p>
-            <p class="nainai-count">-234</p>
-          </div>
-          <div class="footer-area">
-            <div class="user-area">
-              <a href="/user/posts" class="user-name">mike</a>
-              <%= image_tag 'Eric-cartman.png' %>
-            </div>
-            <div class="other-btn">
-              <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
-              <a href=""><i class="fas fa-star fa-lg"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="header-field">
+    <% if @tag %>
+    <p class="post-number">#<%= @tag.name %> <%= @posts.count %>件</p>
+    <% else %>
+    <p class="post-number">検索されたワードの投稿はありませんでした</p>
     <% end %>
   </div>
-  <aside>
-    <div class="ads"></div>
-    <div class="user-ranking">
-      <ul>
-      <li>あるある取得ランキング</li>
-      <% 8.times do |number|%>
-        <li>
-        <div class="user-area">
-          <p><%= number + 1 %></p>
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-        </li>
-      <% end %>
-      </ul>
-    </div>
-  </aside>
+  <div class="index-box">
+    <div class="posts-area"><%= render partial: 'partial_template/post', collection: @posts %></div>
+    <aside>
+      <div class="ads"></div>
+      <div class="user-ranking">
+        <ul>
+        <li>あるある取得ランキング</li>
+        <% 8.times do |number|%>
+          <li>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </aside>
+  </div>
 </div>
 </main>

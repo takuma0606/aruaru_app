@@ -1,15 +1,10 @@
 <main id="new-page">
   <div class="create-box">
-    <form action="" method="get" class="create-form">
-      <div class="text-box">
-        <label for="text" class="text-label">・テキスト</label>
-        <textarea name="text" id="text" placeholder="(例)テスト中掃除始める先生" required></textarea>
-      </div>
-      <div class="tag-box">
-        <label for="tag" class="tag-label">・タグ</label>
-        <textarea name="tag" id="tag" placeholder="(例)＃学校" required></textarea>
-      </div>
-      <button type="button" class="create-button">投稿</button>
-    </form>
+    <%= form_with model: @form, url:posts_path do |f| %>
+      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to current_user.name, user_posts_path %></p>
+      <%= f.text_area :content, class: "content", placeholder: "テキスト" %>
+      <%= f.text_area :name, class: "tag", placeholder: "タグ" %>
+      <%= f.submit "投稿", class: "create-button" %>
+    <% end %>
   </div>
 </main>

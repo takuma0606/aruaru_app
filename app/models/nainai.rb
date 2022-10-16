@@ -1,0 +1,2 @@
+class Nainai < ApplicationRecord
+end

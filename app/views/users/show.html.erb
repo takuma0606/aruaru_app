@@ -1,4 +1,39 @@
-<p id="notice"><%= notice %></p>
+<main id="show-page">
+  <div class="show-container">
+    <div class="edit-or-destroy">
+      <%= link_to "編集", edit_post_path(@post) %>
+      <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    </div>
+    <div class="post-detail">
+      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, user_posts_path %></p>
+      <p class="text"><%= @post.content %></p>
+      <%= render 'partial_template/post_show', post: @post %>
+    </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="comment-area">
+     <ul>
+      <li>
+        <p>これはあるあるw</p>
+        <div class="user-area">
+          <%= image_tag 'Eric-cartman.png' %>
+          <a href="/user/posts" class="user-name">mike</a>
+        </div>
+      </li>
+      <li>
+        <p>それな！</p>
+        <div class="user-area">
+          <%= image_tag 'Eric-cartman.png' %>
+          <a href="/user/posts" class="user-name">mike</a>
+        </div>
+      </li>
+      <li>
+        <p>それなああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+        <div class="user-area">
+          <%= image_tag 'Eric-cartman.png' %>
+          <a href="/user/posts" class="user-name">mike</a>
+        </div>
+      </li>
+     </ul>
+    </div>
+  </div>
+</main>

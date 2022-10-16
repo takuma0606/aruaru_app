@@ -1,0 +1,2 @@
+$(".btn_area_<%= @post.id %>").html("<%= j(render 'partial_template/btn-area') %>");
+$(".count_area_<%= @post.id %>").html("<%= j(render 'partial_template/count-area', post: @post) %>");

@@ -1,0 +1,176 @@
+.post {
+  width: 270px;
+  height: 335px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  border: 2px solid #e2e2e2;
+  transition: 0.2s;
+  padding: 20px 20px 10px;
+  color: rgb(160, 157, 157);
+  &:hover {
+    box-shadow: 0 6px 31px -2px rgb(221, 221, 221);
+    transform: translate(0, -10px);
+  }
+  .text {
+    display: block;
+    width: 100%;
+    font-size: 1.40rem;
+    margin: 0;
+    height: 162px;
+    line-height: 1.2;
+    color: rgb(160, 157, 157);
+    word-break: break-all;
+    overflow: hidden;
+    position: relative;
+    &:before,
+    &:after {
+      background: #fff;
+      position: absolute;
+    }
+    &:before {
+      content: "...";
+      bottom: 0;
+      right: 0;
+    }
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+    }
+  } 
+}
+
+.user-area {
+  display:flex;
+  height: 30px;
+  align-items: center;
+  margin-bottom: 5px;
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid #000;
+  }
+  a {
+    color:rgb(160, 157, 157);
+  }
+}
+
+.function {
+  margin-top: 15px;
+  .btn-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding: 9px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      text-align: center;
+      vertical-align: middle;
+      letter-spacing: 0.1em;
+      border-radius: 0.5rem;
+      outline: none;
+      color: #fff;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+  }
+  .aruaru-btn {
+    background-color: #ff5050;
+    border-bottom: 5px solid #cc3737;
+    &:active {
+      margin-top: 3px;
+      color: #fff;
+      background: #ff5050;
+      border-bottom: 2px solid #cc3737;
+    }
+  }
+  .nainai-btn {
+    background-color: #a7a7a7;
+    border-bottom: 5px solid #868686;
+    &:active {
+      margin-top: 3px;
+      color: #fff;
+      background: #a7a7a7;
+      border-bottom: 2px solid #868686;
+    }
+  }
+  .count-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    p {
+      width: 88px;
+      text-align: center;
+    }
+  }
+  .aruaru-count {
+    color: #ff5050;
+  }
+  .nainai-count {
+    color: #a7a7a7;
+  }
+  .footer-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .tag-area {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    .tag-name {
+      margin-left: 10px;
+    }    
+  }
+  .other-btn {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      padding-left: 10px;
+    }
+  }
+  .fa-comment {
+    color: #a7a7a7;
+  }
+  .fa-star {
+    color: yellow;
+  }
+}
+
+@media screen and (max-width: 955px) {
+  .post {
+    width: 378px;
+    height: auto;
+    padding: 20px 20px 15px;
+    margin-right: 0px;
+    .text {
+      height: auto;
+    }
+  }
+  .user-area {
+    margin-bottom: 10px;
+  }
+  .function {
+    margin-top: 25px;
+  }
+  .other-btn {
+    width: 20%;
+  }
+}
