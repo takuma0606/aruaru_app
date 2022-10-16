@@ -19,7 +19,7 @@
         </ul>
       </div>
       <% if @myposts %>
-      <%= render 'my_posts' %>
+      <div class="posts-area"><%= render partial: 'partial_template/post_my_post', collection: @posts, as: 'post' %></div>
       <% end %>
     </div>
   </div>

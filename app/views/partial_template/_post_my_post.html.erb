@@ -1,0 +1,30 @@
+<div class="post">
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
+  <%= link_to post.content, "/users/my_posts/#{post.id}", class: "text" %>
+  <div class="function">
+    <div class="btn-area btn_area_<%= post.id %>">
+    <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
+      <%= link_to "あるある", "#!", class: "aruaru-btn" %>
+      <%= link_to "ないない", "#!", class: "nainai-btn" %>
+    <% else %>
+      <%= link_to "あるある", aruaru_post_path(post), method: :post, class: "aruaru-btn", remote: true %>
+      <%= link_to "ないない", nainai_post_path(post), method: :post, class: "nainai-btn", remote: true %>
+    <% end %>
+    </div>
+    <div class="count-area count_area_<%= post.id %>">
+      <p class="aruaru-count">+<%= Aruaru.where(post_id: post.id).count %></p>
+      <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
+    </div>
+    <div class="footer-area">
+      <div class="tag-area">
+        <% post.post_tags.each do |post_tag| %>
+          <p class="tag-name">#<%= post_tag.tag.name %></p>
+        <% end %>
+      </div>
+      <div class="other-btn">
+        <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
+        <a href=""><i class="fas fa-star fa-lg"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

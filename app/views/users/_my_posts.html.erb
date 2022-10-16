@@ -1,9 +1,0 @@
-<div class="posts-area">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
-      <%= link_to post.content, "/users/my_posts/#{post.id}", class: "text" %>
-      <%= render 'partial_template/post_function', post: post %>
-    </div>
-  <% end %>
-</div>

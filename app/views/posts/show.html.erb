@@ -1,9 +1,9 @@
 <main id="show-page">
   <div class="show-container">
-    <div class="post post-detail">
+    <div class="post-detail">
       <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, user_posts_path %></p>
       <p class="text"><%= @post.content %></p>
-      <%= render 'partial_template/post_option', post: @post %>
+      <%= render 'partial_template/post_show', post: @post %>
     </div>
 
     <div class="comment-area">
@@ -33,8 +33,8 @@
     </div>
   </div>
   <button type="button" class="fixed-comment-btn"><i class="far fa-comment-dots fa-6x"></i></button>
-  <div class="create-comment">
+</main>
+<div class="create-comment">
     <input placeholder="コメントを入力">
     <button type="button">送信</button>
-  </div>
-</main>
+</div>

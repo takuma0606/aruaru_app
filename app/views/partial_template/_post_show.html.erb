@@ -1,7 +1,5 @@
-<p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
-<%= link_to post.content, "/posts/#{post.id}", class: "text" %>
 <div class="function">
-  <div class="btn-area">
+  <div class="btn-area btn_area_<%= post.id %>">
   <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
     <%= link_to "あるある", "#!", class: "aruaru-btn" %>
     <%= link_to "ないない", "#!", class: "nainai-btn" %>
@@ -10,7 +8,7 @@
     <%= link_to "ないない", nainai_post_path(post), method: :post, class: "nainai-btn", remote: true %>
   <% end %>
   </div>
-  <div class="count-area">
+  <div class="count-area count_area_<%= post.id %>">
     <p class="aruaru-count">+<%= Aruaru.where(post_id: post.id).count %></p>
     <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
   </div>

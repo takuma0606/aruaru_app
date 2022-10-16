@@ -8,13 +8,7 @@
     <% end %>
   </div>
   <div class="index-box">
-    <div class="posts-area">
-      <% @posts.each do |post| %>
-        <div class="post post_<%= post.id %>">
-          <%= render 'partial_template/post_function', post: post %>
-        </div>
-      <% end %>
-    </div>
+    <div class="posts-area"><%= render partial: 'partial_template/post', collection: @posts %></div>
     <aside>
       <div class="ads"></div>
       <div class="user-ranking">
