@@ -11,9 +11,9 @@ class PostsController < ApplicationController
     @q = Tag.ransack(params[:q])
     @tag = @q.result.first
     if @tag
-      @posts = @tag.posts
+      @posts = @tag.posts.page(params[:page])
     else 
-      @posts = Post.all
+      @posts = Post.all.page(params[:page])
     end
   end
 

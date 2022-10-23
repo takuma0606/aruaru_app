@@ -57,6 +57,16 @@ aside {
   }
 }
 
+.page-link {
+  color: red;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
 @media screen and (max-width: 955px) {
   .container {
     width: 80%;
