@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
     redirect_to users_my_posts_path unless @post.user.id == current_user.id
   end
 end

@@ -9,31 +9,8 @@
       <p class="text"><%= @post.content %></p>
       <%= render 'partial_template/post_show', post: @post %>
     </div>
-
     <div class="comment-area">
-     <ul>
-      <li>
-        <p>これはあるあるw</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
-      <li>
-        <p>それな！</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
-      <li>
-        <p>それなああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
-     </ul>
+     <ul><%= render partial: 'partial_template/comment', collection: @comments %></ul>
     </div>
   </div>
 </main>

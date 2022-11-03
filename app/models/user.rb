@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_many :comments
 
   def aruaru?(post_id, user_id)
     Aruaru.find_by(post_id: post_id, user_id: user_id)

@@ -82,8 +82,12 @@ header {
   border: 1px solid #f15b5b;
   margin: 0;
 }
+
+.search-box form {
+  display: flex;
+}
+
 .search-btn {
-  float: right;
   width: 20px;
   height: 20px;
   background: #f15b5b;
@@ -103,10 +107,10 @@ header {
   border: none;
   background: none;
   outline: none;
-  float: left;
-  padding: 0;
+  padding-left: 10px;
   color: #fff;
   font-size: 16px;
+  width: 100%;
   line-height: 20px;
 }
 
@@ -126,12 +130,13 @@ header {
 }
 
 
+
 .icon-iphone {
   display: none;
 }
 
 @media screen and (max-width: 870px) {
-  .icon {
+  .icon li:not(:first-child) {
     display: none;
   }
   .icon-iphone {
@@ -150,5 +155,11 @@ header {
     justify-content: center;
     height: 100%;
     width: 33%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .icon {
+    display: none;
   }
 }

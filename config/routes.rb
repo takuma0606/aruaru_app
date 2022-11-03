@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post :nainai
     end
   end
+  resources :comments 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

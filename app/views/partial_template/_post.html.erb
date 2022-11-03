@@ -1,6 +1,7 @@
 <div class="post">
+  <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
-  <%= link_to post.content, "/posts/#{post.id}", class: "text" %>
+  <p class="text"><%= post.content %></p>
   <div class="function">
     <div class="btn-area btn_area_<%= post.id %>">
     <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
@@ -18,11 +19,11 @@
     <div class="footer-area">
       <div class="tag-area">
         <% post.post_tags.each do |post_tag| %>
-          <p class="tag-name">#<%= post_tag.tag.name %></p>
+          <p class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></p>
         <% end %>
       </div>
       <div class="other-btn">
-        <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
+        <a href=""><i class="far fa-comment fa-lg"></i></a>
         <a href=""><i class="fas fa-star fa-lg"></i></a>
       </div>
     </div>

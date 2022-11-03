@@ -5,36 +5,20 @@
       <p class="text"><%= @post.content %></p>
       <%= render 'partial_template/post_show', post: @post %>
     </div>
-
     <div class="comment-area">
      <ul>
-      <li>
-        <p>これはあるあるw</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
-      <li>
-        <p>それな！</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
-      <li>
-        <p>それなああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-        <div class="user-area">
-          <%= image_tag 'Eric-cartman.png' %>
-          <a href="/user/posts" class="user-name">mike</a>
-        </div>
-      </li>
+     <li><%= form_with model: @comment, url:comments_path do |f| %>
+      <div class="user-area">
+        <%= image_tag 'Eric-cartman.png' %>
+        <%= f.text_field :text, class: "input-comment", placeholder: "コメントを入力..." %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+      </div>
+      <div class="button">
+        <%= f.submit "コメント" %>
+      </div>
+      <% end %></li>
+     <%= render partial: 'partial_template/comment', collection: @comments %>
      </ul>
     </div>
   </div>
-  <button type="button" class="fixed-comment-btn"><i class="far fa-comment-dots fa-6x"></i></button>
 </main>
-<div class="create-comment">
-    <input placeholder="コメントを入力">
-    <button type="button">送信</button>
-</div>
