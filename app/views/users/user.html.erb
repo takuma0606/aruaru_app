@@ -1,4 +1,4 @@
-<main id="page">
+<main id="user-page">
   <div class="container">
     <div class="user-name-area">
       <div>
@@ -19,7 +19,11 @@
         </ul>
       </div>
       <% if @myposts %>
-      <div class="posts-area"><%= render partial: 'partial_template/post_my_post', collection: @posts, as: 'post' %></div>
+      <div class="main">
+        <div class="posts-area">
+        <%= render partial: 'partial_template/post_my_post', collection: @posts, as: 'post' %>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>

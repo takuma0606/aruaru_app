@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #page {
-  padding: 80px 30px;
+  padding: 80px 30px 120px;
 }
 
 .container {
@@ -28,11 +28,39 @@
   justify-content: space-between;
 }
 
-.posts-area {
+.main {
   width: 65%;
-  display: flex;
-  flex-wrap: wrap;
+  height: 100%;
+  .posts-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .page-item {
+    text-align: center;
+  }
+  .page-link {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    border: 1px solid #ff5050;
+    border-radius: 20%;
+    background-color: #ff5050;
+    border-bottom: 3px solid #cc3737;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    &:active {
+      margin-top: 2px;
+      border-bottom: 1px solid #cc3737;
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
 
 aside {
   width: 30%;
@@ -57,22 +85,9 @@ aside {
   }
 }
 
-.page-link {
-  color: red;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-}
-
 @media screen and (max-width: 955px) {
   .container {
     width: 80%;
-  }
-  .posts-area {
-    justify-content: center;
   }
 }
 
@@ -83,7 +98,7 @@ aside {
   aside {
     display: none;
   }
-  .posts-area {
+  .main {
     width: 100%;
   }
 }

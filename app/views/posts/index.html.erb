@@ -8,8 +8,11 @@
     <% end %>
   </div>
   <div class="index-box">
-    <div class="posts-area">
-      <%= render partial: 'partial_template/post', collection: @posts %>
+    <div class="main">
+      <div class="posts-area">
+        <%= render partial: 'partial_template/post', collection: @posts %>
+      </div>
+      <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
     </div>
     <aside>
       <div class="ads"></div>
@@ -24,6 +27,5 @@
       </div>
     </aside>
   </div>
-  <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
 </div>
 </main>

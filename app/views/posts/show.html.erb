@@ -14,7 +14,7 @@
         <%= f.hidden_field :post_id, value: @post.id %>
       </div>
       <div class="button">
-        <%= f.submit "コメント" %>
+        <%= f.submit "投稿", class: "create-button" %>
       </div>
       <% end %></li>
      <%= render partial: 'partial_template/comment', collection: @comments %>
