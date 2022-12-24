@@ -19,9 +19,8 @@
       <div class="user-ranking">
         <ul>
         <li>あるある取得ランキング</li>
-        <% 8.times do |number|%>
-          <li>
-          </li>
+        <% @users.each_with_index do |user,i|%>
+          <li><p class="user-area"><%= i+1 %>.<%= image_tag 'Eric-cartman.png' %><%= link_to user.name, user_posts_path %></p></li>
         <% end %>
         </ul>
       </div>

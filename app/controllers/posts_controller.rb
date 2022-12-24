@@ -15,11 +15,12 @@ class PostsController < ApplicationController
     else 
       @posts = Post.all.page(params[:page])
     end
+    @users = User.all
   end
 
   # GET /posts/1 or /posts/1.json
   def show
-    @comments = @post.comments
+    @comments = @post.comments.order(created_at: :desc)
     @comment = Comment.new
   end
 

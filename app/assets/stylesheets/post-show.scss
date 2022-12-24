@@ -9,10 +9,6 @@
   margin: 0 auto;
 }
 
-.edit-or-destroy a {
-  color: red;
-}
-
 .post-detail {
   margin-bottom: 30px;
   border-radius: 30px;
@@ -27,6 +23,30 @@
     color: rgb(160, 157, 157);
     word-break: break-all;
   } 
+}
+
+.user_area {
+  justify-content: space-between;
+  .post-user {
+    display: flex;
+    align-items: center;
+  }
+  .leader {
+    transform: scaleY(-1);
+  }
+  .edit-or-destroy a {
+    color: rgb(160, 157, 157);
+    margin-left: 10px;
+    &:hover {
+      border: none;
+    }
+  }
+  .comment_edit_or_destroy p {
+    color: rgb(160, 157, 157);
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+  }
 }
 
 .comment-area {
@@ -45,22 +65,27 @@
         margin-left: 20px;
         word-wrap: break-word
       }
+      .comment_edit {
+        display: none;
+      }
       .user-area {
         img {
           width: 25px;
           height: 25px;
         }
-        .input-comment {
-          border: none;
-          border-bottom: 1px solid #4f4f4f;
-          resize: none;
-          overflow: hidden;
-          width: 100%;
-          height: 25px;
-          color: rgb(160, 157, 157);
-          &:focus {
-            outline: 0;
-          }
+      }
+      .input-comment {
+        border: none;
+        border-bottom: 1px solid #4f4f4f;
+        resize: none;
+        overflow: hidden;
+        width: 100%;
+        height: 25px;
+        color: rgb(160, 157, 157);
+        font-family: "Kosugi Maru", sans-serif;
+        margin-bottom: 10px;
+        &:focus {
+          outline: 0;
         }
       }
       .button {
