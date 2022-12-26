@@ -1,14 +1,14 @@
 .post {
   position: relative;
   width: 270px;
-  height: 335px;
+  height: 355px;
   margin-bottom: 20px;
   margin-right: 20px;
   border-radius: 30px;
   background-color: #fff;
   border: 2px solid #e2e2e2;
   transition: 0.2s;
-  padding: 20px 20px 10px;
+  padding: 20px;
   color: rgb(160, 157, 157);
   &:hover {
     box-shadow: 0 6px 31px -2px rgb(221, 221, 221);
@@ -33,6 +33,17 @@
     word-break: break-all;
     overflow: hidden;
     position: relative;
+    .tag-name {
+      z-index: 2;
+      font-size: 1rem;
+      position: inherit;
+      a {
+        color: rgb(160, 157, 157);
+        &:hover {
+          border-bottom: 2px solid rgb(160, 157, 157);
+        }
+      }
+    }
     &:before,
     &:after {
       background: #fff;
@@ -146,27 +157,16 @@
     align-items: center;
     margin-top: 10px;
   }
-  .tag-area {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    .tag-name {
-      margin-left: 10px;
-      z-index: 2;
-      a {
-        color: rgb(160, 157, 157);
-        &:hover {
-          border-bottom: 2px solid rgb(160, 157, 157);
-        }
-      }
-    }    
+  .posted-date {
+    width: 40%;
   }
   .other-btn {
-    width: 30%;
+    width: 60%;
     display: flex;
     justify-content: flex-end;
     a {
       padding-left: 10px;
+      color:rgb(160, 157, 157);
     }
   }
   .fa-comment {

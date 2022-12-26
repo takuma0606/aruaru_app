@@ -1,7 +1,12 @@
 <div class="post">
   <a href="/users/my_posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
-  <p class="text"><%= post.content %></p>
+  <p class="text">
+  <%= post.content %><br><br>
+  <% post.post_tags.each do |post_tag| %>
+    <span class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></span>
+  <% end %>
+  </p>
   <div class="function">
     <div class="btn-area btn_area_<%= post.id %>">
     <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
@@ -17,13 +22,11 @@
       <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
     </div>
     <div class="footer-area">
-      <div class="tag-area">
-        <% post.post_tags.each do |post_tag| %>
-          <p class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></p>
-        <% end %>
+      <div class="posted-date">
+        <p><%= time_ago_in_words(post.created_at) %>前</p>
       </div>
       <div class="other-btn">
-        <a href=""><i class="far fa-comment fa-lg"></i></a>
+        <a href=""><i class="far fa-comment fa-lg"></i> <%= post.comments.count %></a>
         <a href=""><i class="fas fa-star fa-lg"></i></a>
       </div>
     </div>

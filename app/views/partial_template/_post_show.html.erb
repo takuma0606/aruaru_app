@@ -13,13 +13,10 @@
     <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
   </div>
   <div class="footer-area">
-    <div class="tag-area">
-      <% post.post_tags.each do |post_tag| %>
-        <p class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></p>
-      <% end %>
+    <div class="posted-date">
+      <p><%= time_ago_in_words(post.created_at) %>前</p>
     </div>
     <div class="other-btn">
-      <a href="/posts/1"><i class="far fa-comment fa-lg"></i></a>
       <a href=""><i class="fas fa-star fa-lg"></i></a>
     </div>
   </div>
