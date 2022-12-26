@@ -32,6 +32,7 @@
 .user-box {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   .main {
     margin-top: 10px;
   }
@@ -41,7 +42,6 @@
   position: sticky;
   top: 148px;
   width: 30%;
-  height: 280px;
   background-color: red;
   border-radius: 10px;
   color: #fff;

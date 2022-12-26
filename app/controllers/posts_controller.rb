@@ -3,9 +3,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new edit ]
   before_action :check_user, only: %i[  edit destroy ]
 
-  def user_posts
-  end
-
   # GET /posts or /posts.json
   def index
     @q = Tag.ransack(params[:q])

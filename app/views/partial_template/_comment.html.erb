@@ -2,11 +2,15 @@
   <div class="user_area">
   <div class="post-user">
     <%= image_tag 'Eric-cartman.png' %>
-    <a href="/user/posts" class="user-name"><%= comment.user.name %></a>
+    <% if comment.user.id == current_user.id %>
+    <%= link_to comment.user.name, users_my_posts_path, class: "user-name" %>
+    <% else %>
+    <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
+    <% end %>
     <p><%= time_ago_in_words(comment.created_at) %></p>
   </div>
   <div class="action-menu">
-    <% if comment.user.name == current_user.name %>
+    <% if comment.user.id == current_user.id %>
     <div class="comment_edit_or_destroy">
       <p class="comment_edit_button"><i class="fa-solid fa-pen-to-square"></i></p>
       <p class="edit_cancel" style="display: none">キャンセル</p>

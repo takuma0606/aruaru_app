@@ -1,6 +1,12 @@
 <div class="post">
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
-  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to post.user.name, user_posts_path %></p>
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
+  <% if post.user.id == current_user.id %>
+  <%= link_to post.user.name, users_my_posts_path %>
+  <% else %>
+  <%= link_to post.user.name, user_posts_path(post.user) %>
+  <% end %>
+  </p>
   <p class="text"><%= post.content %></p>
   <div class="function">
     <div class="btn-area btn_area_<%= post.id %>">

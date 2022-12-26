@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def user
   end
 
+  def user_posts
+    @user = User.find(params[:id])
+  end
+
   def my_posts
     @posts = current_user.posts
     @myposts = params[:myposts]

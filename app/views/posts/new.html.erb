@@ -1,7 +1,7 @@
 <main id="new-page">
   <div class="create-box">
     <%= form_with model: @form, url:posts_path do |f| %>
-      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= link_to current_user.name, user_posts_path %></p>
+      <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= current_user.name %></p>
       <%= f.text_area :content, class: "content", placeholder: "テキスト" %>
       <%= f.text_area :name, class: "tag", placeholder: "タグ" %>
       <%= f.submit "投稿", class: "create-button" %>
