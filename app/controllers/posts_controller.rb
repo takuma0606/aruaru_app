@@ -3,22 +3,22 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new edit ]
   before_action :check_user, only: %i[  edit destroy ]
 
-  def user_posts
-  end
-
   # GET /posts or /posts.json
   def index
     @q = Tag.ransack(params[:q])
     @tag = @q.result.first
     if @tag
-      @posts = @tag.posts
+      @posts = @tag.posts.page(params[:page])
     else 
-      @posts = Post.all
+      @posts = Post.all.page(params[:page])
     end
+    @users = User.all
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments = @post.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   # GET /posts/new

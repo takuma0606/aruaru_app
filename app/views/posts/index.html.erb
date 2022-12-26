@@ -8,15 +8,25 @@
     <% end %>
   </div>
   <div class="index-box">
-    <div class="posts-area"><%= render partial: 'partial_template/post', collection: @posts %></div>
+    <div class="main">
+      <div class="posts-area">
+        <%= render partial: 'partial_template/post', collection: @posts %>
+      </div>
+      <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
+    </div>
     <aside>
       <div class="ads"></div>
       <div class="user-ranking">
         <ul>
         <li>あるある取得ランキング</li>
-        <% 8.times do |number|%>
-          <li>
-          </li>
+        <% @users.each_with_index do |user,i|%>
+          <li><p class="user-area"><%= i+1 %>.<%= image_tag 'Eric-cartman.png' %>
+          <% if user.id == current_user.id %>
+          <%= link_to user.name, users_my_posts_path %>
+          <% else %>
+          <%= link_to user.name, user_posts_path(user) %>
+          <% end %>
+          </p></li>
         <% end %>
         </ul>
       </div>

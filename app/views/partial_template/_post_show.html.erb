@@ -15,7 +15,7 @@
   <div class="footer-area">
     <div class="tag-area">
       <% post.post_tags.each do |post_tag| %>
-        <p class="tag-name">#<%= post_tag.tag.name %></p>
+        <p class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></p>
       <% end %>
     </div>
     <div class="other-btn">

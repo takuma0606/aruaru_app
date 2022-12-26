@@ -1,0 +1,34 @@
+<li>
+  <div class="user_area">
+  <div class="post-user">
+    <%= image_tag 'Eric-cartman.png' %>
+    <% if comment.user.id == current_user.id %>
+    <%= link_to comment.user.name, users_my_posts_path, class: "user-name" %>
+    <% else %>
+    <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
+    <% end %>
+    <p><%= time_ago_in_words(comment.created_at) %></p>
+  </div>
+  <div class="action-menu">
+    <% if comment.user.id == current_user.id %>
+    <div class="comment_edit_or_destroy">
+      <p class="comment_edit_button"><i class="fa-solid fa-pen-to-square"></i></p>
+      <p class="edit_cancel" style="display: none">キャンセル</p>
+      <%= link_to comment_path(comment.id), method: :delete, class: "comment_destroy", data: { confirm: "本当に削除しますか？" } do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+    </div>
+    <% else %>
+    <i class="fa-solid fa-bullhorn"></i>
+    <% end %>
+  </div>
+  </div>
+  <p class="comment_text"><%= comment.text %></p>
+  <%= form_with model: comment, url:comment_path, method: :PATCH, class: "comment_edit" do |f| %>
+    <%= f.text_area :text, class: "input-comment", value: comment.text %>
+    <%= f.hidden_field :comment_id, value: comment.id %>
+    <div class="button">
+      <%= f.submit "更新", class: "create-button" %>
+    </div>
+  <% end %>
+</li>

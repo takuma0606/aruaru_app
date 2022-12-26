@@ -4,7 +4,6 @@ window.addEventListener("turbolinks:load", () => {
 
   textareaEls.forEach((textareaEl) => {
     // デフォルト値としてスタイル属性を付与
-    textareaEl.setAttribute("style", `height: ${textareaEl.scrollHeight}px;`);
     // inputイベントが発生するたびに関数呼び出し
     textareaEl.addEventListener("input", setTextareaHeight);
   });

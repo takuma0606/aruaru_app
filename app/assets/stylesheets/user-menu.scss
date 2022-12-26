@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#user-page {
+  padding: 50px 30px 100px;
+}
 
 .user-name-area {
   width: 100%;
-  margin-bottom: 20px; 
+  padding-top: 30px;
+  padding-bottom: 20px; 
   position: sticky;
-  top: 80px;
+  top: 50px;
+  background-color: #fff;
+  z-index: 20;
 }
 
 .user-name-area div {
@@ -26,13 +32,16 @@
 .user-box {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  .main {
+    margin-top: 10px;
+  }
 }
 
 .user-menu {
   position: sticky;
   top: 148px;
   width: 30%;
-  height: 280px;
   background-color: red;
   border-radius: 10px;
   color: #fff;
@@ -51,14 +60,19 @@
 }
 
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 955px) {
+  #user-page .container {
+    max-width: 460px;
+  }
+  .user-name-area {
+    position: static;
+  }
   .user-box {
-    flex-direction: column;
+    display: block;
   }
   .user-menu {
     width: 100%;
-  }
-  .menu-content {
-    width: 100%;
+    position: static;
+    margin-bottom: 50px;
   }
 }
