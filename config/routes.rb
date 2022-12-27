@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post :aruaru
       post :nainai
     end
+    resource :favorites, only: [:create, :destroy]
   end
   resources :comments 
   devise_scope :user do

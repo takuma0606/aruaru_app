@@ -167,13 +167,18 @@
     a {
       padding-left: 10px;
       color:rgb(160, 157, 157);
+      position: relative;
+      z-index: 2;
     }
   }
   .fa-comment {
     color: #a7a7a7;
   }
-  .fa-star {
+  .yellow-star {
     color: yellow;
+  }
+  .black-star {
+    color: #a7a7a7;
   }
 }
 

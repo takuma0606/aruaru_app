@@ -11,8 +11,8 @@
       </p>
       <p class="text">
       <%= @post.content %><br><br>
-      <% @post.post_tags.each do |post_tag| %>
-        <span class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></span>
+      <% @post.tags.each do |tag| %>
+        <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
       <% end %>
       </p>
       <%= render 'partial_template/post_show', post: @post %>

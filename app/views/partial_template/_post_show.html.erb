@@ -17,7 +17,9 @@
       <p><%= time_ago_in_words(post.created_at) %>前</p>
     </div>
     <div class="other-btn">
-      <a href=""><i class="fas fa-star fa-lg"></i></a>
+      <div class="favorites", id="favorite_<%= post.id %>">
+        <%= render 'partial_template/favorites', post: post %>
+      </div>
     </div>
   </div>
 </div>
