@@ -15,7 +15,7 @@
         <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
       <% end %>
       </p>
-      <%= render 'partial_template/post_show', post: @post %>
+      <%= render 'partial_template/function', post: @post %>
     </div>
     <div class="comment-area">
      <ul>

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     if @tag
       @posts = @tag.posts.page(params[:page])
     else 
-      @posts = Post.all.page(params[:page])
+      @posts = Post.all.page(params[:page]).order(created_at: :DESC)
     end
     @users = User.all
   end

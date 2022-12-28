@@ -3,7 +3,7 @@
     <div class="post-detail">
       <div class="user_area">
         <div class="post-user">
-          <%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, user_posts_path %>
+          <%= image_tag 'Eric-cartman.png' %><%= @post.user.name %>
         </div>
         <div class="edit-or-destroy">
           <%= link_to edit_post_path(@post) do %>
@@ -20,7 +20,7 @@
         <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
       <% end %>
       </p>
-      <%= render 'partial_template/post_show', post: @post %>
+      <%= render 'partial_template/function', post: @post %>
     </div>
     <div class="comment-area">
      <ul>

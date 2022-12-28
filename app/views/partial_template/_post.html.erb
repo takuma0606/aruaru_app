@@ -1,42 +1,36 @@
 <div class="post">
+<% if controller_name == 'posts' %>
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
-  <% if post.user.id == current_user.id %>
-  <%= link_to post.user.name, users_my_posts_path %>
-  <% else %>
-  <%= link_to post.user.name, user_posts_path(post.user) %>
-  <% end %>
-  </p>
-  <p class="text">
-  <%= post.content %><br><br>
-  <% post.tags.each do |tag| %>
-    <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
-  <% end %>
-  </p>
-  <div class="function">
-    <div class="btn-area btn_area_<%= post.id %>">
-    <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
-      <%= link_to "あるある", "#!", class: "aruaru-btn" %>
-      <%= link_to "ないない", "#!", class: "nainai-btn" %>
+    <% if post.user.id == current_user.id %>
+    <%= link_to post.user.name, user_path %>
     <% else %>
-      <%= link_to "あるある", aruaru_post_path(post), method: :post, class: "aruaru-btn", remote: true %>
-      <%= link_to "ないない", nainai_post_path(post), method: :post, class: "nainai-btn", remote: true %>
+    <%= link_to post.user.name, user_posts_path(post.user) %>
     <% end %>
-    </div>
-    <div class="count-area count_area_<%= post.id %>">
-      <p class="aruaru-count">+<%= Aruaru.where(post_id: post.id).count %></p>
-      <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
-    </div>
-    <div class="footer-area">
-      <div class="posted-date">
-        <p><%= time_ago_in_words(post.created_at) %>前</p>
-      </div>
-      <div class="other-btn">
-        <a href=""><i class="far fa-comment fa-lg"></i> <%= post.comments.count %></a>
-        <div class="favorites", id="favorite_<%= post.id %>">
-          <%= render 'partial_template/favorites', post: post %>
-        </div>
-      </div>
-    </div>
-  </div>
+  </p>
+<% else %>
+  <% if action_name == 'user_posts' %>
+    <a href="/posts/<%= post.id %>", class="to_detail"></a>
+    <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+  <% elsif action_name == 'my_posts' %>
+    <a href="/users/my_posts/<%= post.id %>", class="to_detail"></a>
+    <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+  <% elsif action_name == 'favorite_posts' %>
+    <a href="/posts/<%= post.id %>", class="to_detail"></a>
+    <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
+      <% if post.user.id == current_user.id %>
+      <%= link_to post.user.name, user_path %>
+      <% else %>
+      <%= link_to post.user.name, user_posts_path(post.user) %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+  <p class="text">
+    <%= post.content %><br><br>
+    <% post.tags.each do |tag| %>
+      <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
+    <% end %>
+  </p>
+  <%= render 'partial_template/function', post: post %>
 </div>

@@ -8,7 +8,13 @@ class UsersController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :DESC)
+    @myposts = params[:myposts]
+    render 'user'
+  end
+
+  def favorite_posts
+    @posts = current_user.favorite_posts
     @myposts = params[:myposts]
     render 'user'
   end
