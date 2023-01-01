@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #page {
-  padding: 80px 30px 120px;
+  padding: 60px 30px 120px;
 }
 
 .container {
@@ -13,8 +13,8 @@
 
 .header-field {
   width: 100%;
-  margin-bottom: 30px;
-  height: 60px;
+  margin-bottom: 10px;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,11 +23,11 @@
   }
 }
 
-.index-box {
+.box {
   display: flex;
 }
 
-.main {
+.index-main {
   width: 580px;
   height: 100%;
   .posts-area {
@@ -64,9 +64,31 @@ aside {
   margin-left: 20px;
   .ads {
     width: 300px;
-    height: 300px;
-    background-color: yellow;
+    background-color: rgb(235, 235, 235);
     margin-bottom: 50px;
+    border-radius: 30px;
+    li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 10px;
+      &:first-child {
+        text-align: center;
+        font-weight: bold;
+      }
+      &:last-child {
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+      &:hover:not(:first-child) {
+        background-color: #e0e0e0;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        color: #000;
+      }
+    }
   }
   .user-ranking {
     position: -webkit-sticky;
@@ -94,7 +116,7 @@ aside {
   aside {
     display: none;
   }
-  .main {
+  .index-main {
     width: 100%;
   }
 }

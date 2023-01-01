@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'users/my_posts'
   get 'users/my_posts/:id' => 'users#show'
   get '/user/favorite_posts', to: 'users#favorite_posts', as: 'favorite_posts'
+  get '/user/aruaru_posts', to: 'users#aruaru_posts', as: 'aruaru_posts'
+  get '/user/nainai_posts', to: 'users#nainai_posts', as: 'nainai_posts'
   devise_for :users
   resources :posts do
     member do

@@ -1,12 +1,16 @@
 #show-page {
-  padding: 80px 30px 120px;
+  padding: 100px 30px 120px;
 }
 
-.show-container {
-  width: 60%;
-  max-width: 400px;
-  min-width: 280px;
-  margin: 0 auto;
+.show-main {
+  display: flex;
+  width: 580px;
+  height: 100%;
+  justify-content: center;
+}
+
+.post-show-area {
+  width: 450px;
 }
 
 .post-detail {
@@ -140,6 +144,13 @@
         color: red;
       }
     }
+  }
+}
+
+@media screen and (max-width: 955px) {
+  .show-main,
+  .post-show-area {
+    width: 100%;
   }
 }
 

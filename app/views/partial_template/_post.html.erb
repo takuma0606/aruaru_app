@@ -1,5 +1,11 @@
 <div class="post">
-<% if controller_name == 'posts' %>
+<% if action_name == 'user_posts' %>
+  <a href="/posts/<%= post.id %>", class="to_detail"></a>
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+<% elsif action_name == 'my_posts' %>
+  <a href="/users/my_posts/<%= post.id %>", class="to_detail"></a>
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+<% else %>
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
     <% if post.user.id == current_user.id %>
@@ -8,23 +14,6 @@
     <%= link_to post.user.name, user_posts_path(post.user) %>
     <% end %>
   </p>
-<% else %>
-  <% if action_name == 'user_posts' %>
-    <a href="/posts/<%= post.id %>", class="to_detail"></a>
-    <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
-  <% elsif action_name == 'my_posts' %>
-    <a href="/users/my_posts/<%= post.id %>", class="to_detail"></a>
-    <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
-  <% elsif action_name == 'favorite_posts' %>
-    <a href="/posts/<%= post.id %>", class="to_detail"></a>
-    <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
-      <% if post.user.id == current_user.id %>
-      <%= link_to post.user.name, user_path %>
-      <% else %>
-      <%= link_to post.user.name, user_posts_path(post.user) %>
-      <% end %>
-    </p>
-  <% end %>
 <% end %>
   <p class="text">
     <%= post.content %><br><br>
