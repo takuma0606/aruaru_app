@@ -3,7 +3,7 @@ class PostsForm
   attr_accessor :content, :name, :user_id, :tag_id, :post_id 
 
   with_options presence: true do
-    validates :content
+    validates :content, length: { maximum: 200 }
     validates :name
   end
 

@@ -65,7 +65,8 @@
       width: 100%;
     }
   }
-  li.active {
+  li.hover,
+  li.selected {
     background-color: #f15b5b;
   }
 }

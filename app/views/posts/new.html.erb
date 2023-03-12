@@ -3,7 +3,7 @@
     <%= form_with model: @form, url:posts_path do |f| %>
       <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= current_user.name %></p>
       <%= f.text_area :content, class: "content", placeholder: "テキスト" %>
-      <%= f.text_area :name, class: "tag", placeholder: "タグ" %>
+      <%= f.text_area :name, class: "tag", placeholder: "タグ（複数入力する際は「、」で区切ってください）" %>
       <%= f.submit "投稿", class: "create-button" %>
     <% end %>
   </div>

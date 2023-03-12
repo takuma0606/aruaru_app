@@ -28,14 +28,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @tag_list = @post.tags.pluck(:name).join(",")
+    @tag_list = @post.tags.pluck(:name).join("、")
     @form = PostsForm.new(post: @post)
   end
 
   # POST /posts or /posts.json
   def create
     @form = PostsForm.new(post_params)
-    tag_list = params[:posts_form][:name].split(",")
+    tag_list = params[:posts_form][:name].split("、")
     if @form.valid?
       @form.save(tag_list)
       redirect_to users_my_posts_path
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     @form = PostsForm.new(post_update_params, post: @post)
-    tag_list = params[:posts_form][:name].split(",")
+    tag_list = params[:posts_form][:name].split("、")
     if @form.update(tag_list)
       redirect_to users_my_posts_path
     else

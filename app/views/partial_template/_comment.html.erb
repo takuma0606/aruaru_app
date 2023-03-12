@@ -25,7 +25,7 @@
   </div>
   <p class="comment_text"><%= comment.text %></p>
   <%= form_with model: comment, url:comment_path, method: :PATCH, class: "comment_edit" do |f| %>
-    <%= f.text_area :text, class: "input-comment", value: comment.text %>
+    <%= f.text_area :text, class: "input-comment" %>
     <%= f.hidden_field :comment_id, value: comment.id %>
     <div class="button">
       <%= f.submit "更新", class: "create-button" %>

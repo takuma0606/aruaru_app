@@ -9,26 +9,18 @@ class UsersController < ApplicationController
 
   def my_posts
     @posts = current_user.posts.order(created_at: :DESC)
-    @myposts = params[:myposts]
-    render 'user'
   end
 
   def favorite_posts
     @posts = current_user.favorite_posts
-    @myposts = params[:myposts]
-    render 'user'
   end
 
   def aruaru_posts
     @posts = current_user.aruaru_posts
-    @myposts = params[:myposts]
-    render 'user'
   end
 
   def nainai_posts
     @posts = current_user.nainai_posts
-    @myposts = params[:myposts]
-    render 'user'
   end
 
   def show
