@@ -3,7 +3,7 @@
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
 <% elsif action_name == 'my_posts' %>
-  <a href="/users/my_posts/<%= post.id %>", class="to_detail"></a>
+  <a href="/user/post/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
 <% else %>
   <a href="/posts/<%= post.id %>", class="to_detail"></a>

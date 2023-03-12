@@ -7,7 +7,7 @@
             <p class="user-area">
             <%= image_tag 'Eric-cartman.png' %>
             <% if @post.user.id == current_user.id %>
-            <%= link_to @post.user.name, users_my_posts_path %>
+            <%= link_to @post.user.name, my_posts_path %>
             <% else %>
             <%= link_to @post.user.name, user_posts_path(@post.user) %>
             <% end %>

@@ -3,7 +3,7 @@
   <div class="post-user">
     <%= image_tag 'Eric-cartman.png' %>
     <% if comment.user.id == current_user.id %>
-    <%= link_to comment.user.name, users_my_posts_path, class: "user-name" %>
+    <%= link_to comment.user.name, my_posts_path, class: "user-name" %>
     <% else %>
     <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
     <% end %>

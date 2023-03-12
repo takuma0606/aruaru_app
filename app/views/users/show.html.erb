@@ -6,7 +6,7 @@
           <div class="post-detail">
             <div class="user_area">
               <div class="post-user">
-                <%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, user_posts_path %>
+                <%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, my_posts_path %>
               </div>
               <div class="edit-or-destroy">
                 <%= link_to edit_post_path(@post) do %>
