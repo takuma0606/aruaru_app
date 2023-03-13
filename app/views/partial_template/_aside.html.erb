@@ -13,10 +13,14 @@
     <% users.each_with_index do |user,i|%>
       <li>
       <p class="user-area"><%= i+1 %>.<%= image_tag 'Eric-cartman.png' %>
-      <% if user.id == current_user.id %>
-      <%= link_to user.name, my_posts_path %>
+      <% if user_signed_in? %>
+        <% if user.id == current_user.id %>
+        <%= link_to user.name, my_posts_path %>
+        <% else %>
+        <%= link_to user.name, user_posts_path(user) %>
+        <% end %>
       <% else %>
-      <%= link_to user.name, user_posts_path(user) %>
+        <%= link_to user.name, user_posts_path(user) %>
       <% end %>
       </p>
       </li>

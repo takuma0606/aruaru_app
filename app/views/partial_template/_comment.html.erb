@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <li>
   <div class="user_area">
   <div class="post-user">
@@ -32,3 +33,18 @@
     </div>
   <% end %>
 </li>
+<% else %>
+<li>
+  <div class="user_area">
+    <div class="post-user">
+      <%= image_tag 'Eric-cartman.png' %>
+      <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
+      <p><%= time_ago_in_words(comment.created_at) %>前</p>
+    </div>
+    <div class="action-menu">
+      <i class="fa-solid fa-bullhorn"></i>
+    </div>
+  </div>
+  <p class="comment_text"><%= comment.text %></p>
+</li>
+<% end %>

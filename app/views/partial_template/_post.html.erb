@@ -8,11 +8,15 @@
 <% else %>
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
+  <% if user_signed_in? %>
     <% if post.user.id == current_user.id %>
-    <%= link_to post.user.name, user_path %>
+      <%= link_to post.user.name, user_path %>
     <% else %>
-    <%= link_to post.user.name, user_posts_path(post.user) %>
+      <%= link_to post.user.name, user_posts_path(post.user) %>
     <% end %>
+  <% else %>
+    <%= link_to post.user.name, user_posts_path(post.user) %>
+  <% end %>
   </p>
 <% end %>
   <p class="text">
