@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   get '/user' => 'users#user'
   get '/user/:id/posts', to: 'users#user_posts', as: 'user_posts'
-  get 'users/my_posts'
-  get 'users/my_posts/:id' => 'users#show'
+  get 'user/posts', to: 'users#my_posts', as: 'my_posts'
+  get 'user/post/:id' => 'users#show'
+  get '/user/favorite_posts', to: 'users#favorite_posts', as: 'favorite_posts'
+  get '/user/aruaru_posts', to: 'users#aruaru_posts', as: 'aruaru_posts'
+  get '/user/nainai_posts', to: 'users#nainai_posts', as: 'nainai_posts'
   devise_for :users
   resources :posts do
     member do
       post :aruaru
       post :nainai
     end
+    resource :favorites, only: [:create, :destroy]
   end
   resources :comments 
   devise_scope :user do

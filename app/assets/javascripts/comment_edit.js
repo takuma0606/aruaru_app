@@ -5,6 +5,12 @@ window.addEventListener('DOMContentLoaded', function(){
     $(this).hide();
     $(this).parent().find(".edit_cancel").show();
     $(this).parent().find(".comment_destroy").hide();
+    const textareaEls = document.querySelectorAll("textarea");
+
+    textareaEls.forEach((textareaEl) => {
+      // デフォルト値としてスタイル属性を付与
+      textareaEl.setAttribute("style", `height: ${textareaEl.scrollHeight}px;`);
+    });
   });
 });
 

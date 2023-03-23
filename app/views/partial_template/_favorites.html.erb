@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <% if current_user.favorites.find_by(post_id: post.id) %>
+    <%= link_to post_favorites_path(post.id), method: :delete, remote: true do %>
+      <i class="fas fa-star yellow-star"></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_favorites_path(post.id), method: :post, remote: true do %>
+      <i class="fas fa-star black-star"></i>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <i class="fas fa-star black-star"></i>
+  <% end %>
+<% end %>

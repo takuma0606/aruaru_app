@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy aruaru nainai ]
   before_action :authenticate_user!, only: %i[ new edit ]
   before_action :check_user, only: %i[  edit destroy ]
+  before_action :data_for_aside, only: %i[ index show]
 
   # GET /posts or /posts.json
   def index
@@ -10,9 +11,8 @@ class PostsController < ApplicationController
     if @tag
       @posts = @tag.posts.page(params[:page])
     else 
-      @posts = Post.all.page(params[:page])
+      @posts = Post.all.page(params[:page]).order(created_at: :DESC)
     end
-    @users = User.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -28,14 +28,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @tag_list = @post.tags.pluck(:name).join(",")
+    @tag_list = @post.tags.pluck(:name).join("、")
     @form = PostsForm.new(post: @post)
   end
 
   # POST /posts or /posts.json
   def create
     @form = PostsForm.new(post_params)
-    tag_list = params[:posts_form][:name].split(",")
+    tag_list = params[:posts_form][:name].split("、")
     if @form.valid?
       @form.save(tag_list)
       redirect_to users_my_posts_path
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     @form = PostsForm.new(post_update_params, post: @post)
-    tag_list = params[:posts_form][:name].split(",")
+    tag_list = params[:posts_form][:name].split("、")
     if @form.update(tag_list)
       redirect_to users_my_posts_path
     else
@@ -77,6 +77,11 @@ class PostsController < ApplicationController
 
     def check_user
       redirect_to users_my_posts_path unless @post.user.id == current_user.id
+    end
+
+    def data_for_aside
+      @users = User.joins(:aruarus).group('users.name').order('count(user_id) desc').limit(10)
+      @tag_hash = Tag.joins(:post_tags).group('tags.name').order('count_post_id desc').count(:post_id).take(10).to_h
     end
 
     def post_update_params

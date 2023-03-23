@@ -1,0 +1,31 @@
+<div class="function">
+  <div class="btn-area btn_area_<%= post.id %>">
+  <% if user_signed_in? %>
+    <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
+      <%= link_to "あるある", "#!", class: "aruaru-btn" %>
+      <%= link_to "ないない", "#!", class: "nainai-btn" %>
+    <% else %>
+      <%= link_to "あるある", aruaru_post_path(post), method: :post, class: "aruaru-btn", remote: true %>
+      <%= link_to "ないない", nainai_post_path(post), method: :post, class: "nainai-btn", remote: true %>
+    <% end %>
+  <% else %>
+    <%= link_to "あるある", new_user_session_path, class: "aruaru-btn" %>
+    <%= link_to "ないない", new_user_session_path, class: "nainai-btn" %>
+  <% end %>
+  </div>
+  <div class="count-area count_area_<%= post.id %>">
+    <p class="aruaru-count">+<%= Aruaru.where(post_id: post.id).count %></p>
+    <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
+  </div>
+  <div class="footer-area">
+    <div class="posted-date">
+      <p><%= time_ago_in_words(post.created_at) %>前</p>
+    </div>
+    <div class="other-btn">
+      <a href=""><i class="far fa-comment fa-lg"></i> <%= post.comments.count %></a>
+      <div class="favorites", id="favorite_<%= post.id %>">
+        <%= render 'partial_template/favorites', post: post %>
+      </div>
+    </div>
+  </div>
+</div>

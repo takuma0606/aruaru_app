@@ -1,36 +1,18 @@
 <main id="page">
-<div class="container">
-  <div class="header-field">
-    <% if @tag %>
-    <p class="post-number">#<%= @tag.name %> <%= @posts.count %>件</p>
-    <% else %>
-    <p class="post-number">検索されたワードの投稿はありませんでした</p>
-    <% end %>
-  </div>
-  <div class="index-box">
-    <div class="main">
-      <div class="posts-area">
-        <%= render partial: 'partial_template/post', collection: @posts %>
-      </div>
-      <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
+  <div class="container">
+    <div class="header-field">
+      <% if @tag %>
+      <p class="post-number">#<%= @tag.name %> <%= @posts.count %>件</p>
+      <% else %>
+      <p class="post-number">検索されたワードの投稿はありませんでした</p>
+      <% end %>
     </div>
-    <aside>
-      <div class="ads"></div>
-      <div class="user-ranking">
-        <ul>
-        <li>あるある取得ランキング</li>
-        <% @users.each_with_index do |user,i|%>
-          <li><p class="user-area"><%= i+1 %>.<%= image_tag 'Eric-cartman.png' %>
-          <% if user.id == current_user.id %>
-          <%= link_to user.name, users_my_posts_path %>
-          <% else %>
-          <%= link_to user.name, user_posts_path(user) %>
-          <% end %>
-          </p></li>
-        <% end %>
-        </ul>
+    <div class="box">
+      <div class="index-main">
+        <div class="posts-area"><%= render partial: 'partial_template/post', collection: @posts %></div>
+        <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
       </div>
-    </aside>
+      <%= render 'partial_template/aside',  {tag_hash: @tag_hash, users: @users} %>
+    </div>
   </div>
-</div>
 </main>

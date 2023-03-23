@@ -1,37 +1,29 @@
 <div class="post">
+<% if action_name == 'user_posts' %>
+  <a href="/posts/<%= post.id %>", class="to_detail"></a>
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+<% elsif action_name == 'my_posts' %>
+  <a href="/user/post/<%= post.id %>", class="to_detail"></a>
+  <p class="user-area"><%= image_tag 'Eric-cartman.png' %><%= post.user.name %></p>
+<% else %>
   <a href="/posts/<%= post.id %>", class="to_detail"></a>
   <p class="user-area"><%= image_tag 'Eric-cartman.png' %>
-  <% if post.user.id == current_user.id %>
-  <%= link_to post.user.name, users_my_posts_path %>
+  <% if user_signed_in? %>
+    <% if post.user.id == current_user.id %>
+      <%= link_to post.user.name, user_path %>
+    <% else %>
+      <%= link_to post.user.name, user_posts_path(post.user) %>
+    <% end %>
   <% else %>
-  <%= link_to post.user.name, user_posts_path(post.user) %>
+    <%= link_to post.user.name, user_posts_path(post.user) %>
   <% end %>
   </p>
-  <p class="text"><%= post.content %></p>
-  <div class="function">
-    <div class="btn-area btn_area_<%= post.id %>">
-    <% if current_user.aruaru?(post.id,current_user.id) or current_user.nainai?(post.id,current_user.id) %>
-      <%= link_to "あるある", "#!", class: "aruaru-btn" %>
-      <%= link_to "ないない", "#!", class: "nainai-btn" %>
-    <% else %>
-      <%= link_to "あるある", aruaru_post_path(post), method: :post, class: "aruaru-btn", remote: true %>
-      <%= link_to "ないない", nainai_post_path(post), method: :post, class: "nainai-btn", remote: true %>
+<% end %>
+  <p class="text">
+    <%= post.content %><br><br>
+    <% post.tags.each do |tag| %>
+      <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
     <% end %>
-    </div>
-    <div class="count-area count_area_<%= post.id %>">
-      <p class="aruaru-count">+<%= Aruaru.where(post_id: post.id).count %></p>
-      <p class="nainai-count">-<%= Nainai.where(post_id: post.id).count %></p>
-    </div>
-    <div class="footer-area">
-      <div class="tag-area">
-        <% post.post_tags.each do |post_tag| %>
-          <p class="tag-name">#<%= link_to post_tag.tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{post_tag.tag.name}&button=" %></p>
-        <% end %>
-      </div>
-      <div class="other-btn">
-        <a href=""><i class="far fa-comment fa-lg"></i></a>
-        <a href=""><i class="fas fa-star fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
+  </p>
+  <%= render 'partial_template/function', post: post %>
 </div>

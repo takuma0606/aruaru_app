@@ -1,13 +1,14 @@
+<% if user_signed_in? %>
 <li>
   <div class="user_area">
   <div class="post-user">
     <%= image_tag 'Eric-cartman.png' %>
     <% if comment.user.id == current_user.id %>
-    <%= link_to comment.user.name, users_my_posts_path, class: "user-name" %>
+    <%= link_to comment.user.name, my_posts_path, class: "user-name" %>
     <% else %>
     <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
     <% end %>
-    <p><%= time_ago_in_words(comment.created_at) %></p>
+    <p><%= time_ago_in_words(comment.created_at) %>前</p>
   </div>
   <div class="action-menu">
     <% if comment.user.id == current_user.id %>
@@ -25,10 +26,25 @@
   </div>
   <p class="comment_text"><%= comment.text %></p>
   <%= form_with model: comment, url:comment_path, method: :PATCH, class: "comment_edit" do |f| %>
-    <%= f.text_area :text, class: "input-comment", value: comment.text %>
+    <%= f.text_area :text, class: "input-comment" %>
     <%= f.hidden_field :comment_id, value: comment.id %>
     <div class="button">
       <%= f.submit "更新", class: "create-button" %>
     </div>
   <% end %>
 </li>
+<% else %>
+<li>
+  <div class="user_area">
+    <div class="post-user">
+      <%= image_tag 'Eric-cartman.png' %>
+      <%= link_to comment.user.name, user_posts_path(comment.user), class: "user-name" %>
+      <p><%= time_ago_in_words(comment.created_at) %>前</p>
+    </div>
+    <div class="action-menu">
+      <i class="fa-solid fa-bullhorn"></i>
+    </div>
+  </div>
+  <p class="comment_text"><%= comment.text %></p>
+</li>
+<% end %>

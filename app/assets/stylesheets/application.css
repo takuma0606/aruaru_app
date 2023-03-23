@@ -123,10 +123,27 @@ header {
   align-items: center;
 }
 
-.icon ul li {
+.icon li {
   text-align: center;
-  padding-left: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
   color: #fff;
+}
+
+.icon a {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img,
+.icon-iphone img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 

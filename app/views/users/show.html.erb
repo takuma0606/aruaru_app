@@ -1,27 +1,39 @@
 <main id="show-page">
-  <div class="show-container">
-    <div class="post-detail">
-      <div class="user_area">
-        <div class="post-user">
-          <%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, user_posts_path %>
-        </div>
-        <div class="edit-or-destroy">
-          <%= link_to edit_post_path(@post) do %>
-            <i class="fa-solid fa-pen-to-square"></i>
-          <% end %>
-          <%= link_to post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
+  <div class="container">
+    <div class="box">
+      <div class="show-main">
+        <div class="post-show-area">
+          <div class="post-detail">
+            <div class="user_area">
+              <div class="post-user">
+                <%= image_tag 'Eric-cartman.png' %><%= link_to @post.user.name, my_posts_path %>
+              </div>
+              <div class="edit-or-destroy">
+                <%= link_to edit_post_path(@post) do %>
+                  <i class="fa-solid fa-pen-to-square"></i>
+                <% end %>
+                <%= link_to post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+                  <i class="fa-solid fa-trash-can"></i>
+                <% end %>
+              </div>
+            </div>
+            <p class="text">
+            <%= @post.content %><br><br>
+            <% @post.tags.each do |tag| %>
+              <span class="tag-name">#<%= link_to tag.name, "/posts?utf8=✓&q%5Bname_cont%5D=#{tag.name}&button=" %></span>
+            <% end %>
+            </p>
+            <%= render 'partial_template/function', post: @post %>
+          </div>
+          <div class="comment-area">
+            <ul>
+            <li>コメント  <%= @comments.count %>件</li>
+            <%= render partial: 'partial_template/comment', collection: @comments %>
+            </ul>
+          </div>
         </div>
       </div>
-      <p class="text"><%= @post.content %></p>
-      <%= render 'partial_template/post_show', post: @post %>
-    </div>
-    <div class="comment-area">
-     <ul>
-     <li>コメント  <%= @comments.count %>件</li>
-     <%= render partial: 'partial_template/comment', collection: @comments %>
-     </ul>
+      <%= render 'partial_template/aside',  {tag_hash: @tag_hash, users: @users} %>
     </div>
   </div>
 </main>

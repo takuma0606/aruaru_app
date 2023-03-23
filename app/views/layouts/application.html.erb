@@ -22,12 +22,7 @@
       <ul>
       <li><%= render 'searches/searchform' %></li>
       <li><a href="/posts/new" class="home"><i class="fas fa-pencil-alt fa-lg"></i></a></li>
-      <li><a href="/user" class="home"><i class="fas fa-user fa-lg"></i></a></li>
-      <% if user_signed_in? %>
-      <li><%= current_user.name %></li>
-      <% else %>
-      <li>ゲストユーザー</li>
-      <% end %>
+      <li><a href="/user" class="home"><%= image_tag 'Eric-cartman.png' %></a></li>
       </ul>
     </nav>
   </div>
@@ -39,7 +34,7 @@
   <nav class="icon-iphone">
     <a class="home"><i class="fa-sharp fa-solid fa-house fa-lg"></i></a>
     <a href="/posts/new" class="home"><i class="fas fa-pencil-alt fa-lg"></i></a>
-    <a href="/user" class="home"><i class="fas fa-user fa-lg"></i></a>
+    <a href="/user" class="home"><%= image_tag 'Eric-cartman.png' %></a>
   </nav>
   </body>
 </html>

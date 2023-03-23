@@ -11,20 +11,15 @@
         <ul>
         <li>アカウント設定</li>
         <li>プロフィール</li>
-        <li><%= link_to "自分の投稿", users_my_posts_path(myposts: "my_posts") %></li>
-        <li>お気に入り登録した投稿</li>
+        <li><%= link_to "自分の投稿", my_posts_path %></li>
+        <li><%= link_to "お気に入り登録した投稿", favorite_posts_path %></li>
+        <li><%= link_to "あるあるした投稿", aruaru_posts_path %></li>
+        <li><%= link_to "ないないした投稿", nainai_posts_path %></li>
         <li>パスワード変更</li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <li>退会</li>
         </ul>
       </div>
-      <% if @myposts %>
-      <div class="main">
-        <div class="posts-area">
-        <%= render partial: 'partial_template/post_my_post', collection: @posts, as: 'post' %>
-        </div>
-      </div>
-      <% end %>
     </div>
   </div>
 </main>
