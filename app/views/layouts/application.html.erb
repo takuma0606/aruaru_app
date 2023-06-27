@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,5 +35,6 @@
     <a href="/posts/new" class="home"><i class="fas fa-pencil-alt fa-lg"></i></a>
     <a href="/user" class="home"><%= image_tag 'Eric-cartman.png' %></a>
   </nav>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
