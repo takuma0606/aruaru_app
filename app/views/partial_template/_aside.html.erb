@@ -1,7 +1,7 @@
 <aside>
   <div class="ads">
     <ul>
-    <li>注目タグ</li>
+    <li>注目のタグ</li>
     <% tag_hash.each do |tag_name, count| %>
     <li><%= link_to "##{tag_name} #{count}件", "/posts?utf8=✓&q%5Bname_cont%5D=#{tag_name}&button=" %></li>
     <% end %>
