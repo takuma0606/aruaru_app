@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @users = User.joins(:aruarus).group('users.name').order('count(user_id) desc').limit(10)
+    @users = User.all
     @tag_hash = Tag.joins(:post_tags).group('tags.name').order('count_post_id desc').count(:post_id).take(10).to_h
     redirect_to users_my_posts_path unless @post.user.id == current_user.id
   end
