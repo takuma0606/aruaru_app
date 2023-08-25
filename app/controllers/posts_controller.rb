@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     tag_list = params[:posts_form][:name].split("、")
     if @form.valid?
       @form.save(tag_list)
-      redirect_to users_my_posts_path
+      redirect_to redirect_to  controller: :users, action: :my_posts
     else
       render :new
     end

@@ -10,14 +10,11 @@
       <div class="user-menu">
         <ul>
         <li>アカウント設定</li>
-        <li>プロフィール</li>
         <li><%= link_to "自分の投稿", my_posts_path %></li>
         <li><%= link_to "お気に入り登録した投稿", favorite_posts_path %></li>
         <li><%= link_to "あるあるした投稿", aruaru_posts_path %></li>
         <li><%= link_to "ないないした投稿", nainai_posts_path %></li>
-        <li>パスワード変更</li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <li>退会</li>
         </ul>
       </div>
     </div>
