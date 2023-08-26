@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     tag_list = params[:posts_form][:name].split("、")
     if @form.valid?
       @form.save(tag_list)
-      redirect_to users_my_posts_path
+      redirect_to redirect_to  controller: :users, action: :my_posts
     else
       render :new
     end
@@ -80,8 +80,8 @@ class PostsController < ApplicationController
     end
 
     def data_for_aside
-      @users = User.joins(:aruarus).group('users.name').order('count(user_id) desc').limit(10)
-      @tag_hash = Tag.joins(:post_tags).group('tags.name').order('count_post_id desc').count(:post_id).take(10).to_h
+      @users = User.all
+      @tag_hash = Tag.all
     end
 
     def post_update_params
