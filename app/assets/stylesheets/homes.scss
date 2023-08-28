@@ -4,6 +4,10 @@
 
 #top-page {
   width: 100%;
+  background-image: url(peopleimage.jpg);
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
   text-align: center;
   padding-bottom: 50px;
 }
