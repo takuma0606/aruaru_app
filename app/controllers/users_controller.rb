@@ -28,6 +28,6 @@ class UsersController < ApplicationController
     @comments = @post.comments
     @users = User.all
     @tag_hash = Tag.joins(:post_tags).group('tags.name').order('count_post_id desc').count(:post_id).take(9).to_h
-    redirect_to users_my_posts_path unless @post.user.id == current_user.id
+    redirect_to my_posts_path unless @post.user.id == current_user.id
   end
 end

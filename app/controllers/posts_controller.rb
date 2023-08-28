@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     tag_list = params[:posts_form][:name].split("、")
     if @form.valid?
       @form.save(tag_list)
-      redirect_to users_my_posts_path
+      redirect_to my_posts_path
     else
       render :new
     end
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     @form = PostsForm.new(post_update_params, post: @post)
     tag_list = params[:posts_form][:name].split("、")
     if @form.update(tag_list)
-      redirect_to users_my_posts_path
+      redirect_to my_posts_path
     else
       render :edit
     end
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
-    redirect_to users_my_posts_path
+    redirect_to my_posts_path
   end
 
   def aruaru
