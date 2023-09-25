@@ -52,6 +52,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'rails-i18n'
 group :production do
   gem "pg", "~> 1.4"
 end

@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
   datetime:
     distance_in_words:
       about_x_hours:
